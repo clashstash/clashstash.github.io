@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-20791.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>uniapp自定义弹窗组件</title>
+        <meta name="description" content="介绍 uniapp自定义弹窗组件uniPop，基于uni-app开发的自定义模态弹窗|msg信息框|alert对话框|confirm确认框|toast弱提示框 支持多种动画效果、多弹窗类型ios/an" />
+        <link rel="icon" href="__ADDON__/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">uniapp自定义弹窗组件</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>介绍<br /> uniapp自定义弹窗组件uniPop，基于uni-app开发的自定义模态弹窗|msg信息框|alert对话框|confirm确认框|toast弱提示框</p> <p>支持多种动画效果、多弹窗类型ios/android、可以自定义弹窗样式/自定义多按钮及事件/弹窗显示位置、自动关闭秒数、遮罩层透明度及点击遮罩是否关闭</p> <p>H5/小程序/App三端效果如下，亲测多端效果兼容性一致。(后续大图均展示App端)</p> <p>用法<br /> ◆ 弹窗uniPop.vue组件两种引入方式</p> <p>1、在main.js里引入全局组件</p> <pre><code>import uniPop from './components/uniPop/uniPop.vue'  Vue.component('uni-pop', uniPop)</code></pre> <p>2、在相应页面引入组件</p> <p>复制代码</p> <pre><code>import uniPop from './components/uniPop/uniPop.vue' export default {     data() {         return {             ...         }     },     components:{         uniPop     },     ... }</code></pre> <pre><code>&lt;template&gt;     &lt;view class="container"&gt;         ...                  &lt;!-- 弹窗模板 --&gt;         &lt;uni-pop ref="uniPop"&gt;&lt;/uni-pop&gt;     &lt;/view&gt; &lt;/template&gt;</code></pre> <p>msg信息框效果</p> <pre><code>this.$refs.uniPop.show({     content: 'msg消息提示框（5s后窗口关闭）',     shade: true,     shadeClose: false,     time: 5,     anim: 'fadeIn', })</code></pre> <pre><code>this.$refs.uniPop.show({     skin: 'toast',     content: 'loading',     icon: 'loading', //success | info | error | loading     shade: false,     time: 3 })</code></pre> <pre><code>let uniPop = this.$refs.uniPop uniPop.show({     skin: 'ios',     title: '开启新邮件提醒',     content: '为了保证新邮件能及时收到提醒，请前往系统 [设置] - [电池] 中关闭应用锁屏清理。',     shadeClose: false,          btns: [         {             text: '取消',             style: 'color: #2a83f2',             onTap() {                 uniPop.close();             }         },         {             text: '前往设置',             style: 'color: #2a83f2',             onTap() {                 console.log('您点击了前往设置！');             }         }     ] })</code></pre> <p>调用方式如上，只是传入参数不一样，下面就不一 一展示了</p> <p>◆ uniapp自定义模板template</p> <pre><code> /**   * @tpl        uni-app自定义弹窗组件 - uniPop.vue   * @author     andy by 2019-09-20   * @about      Q：282310962  wx：xy190310   */  &lt;template&gt;     &lt;view v-if="opts.isVisible" class="uniPop" :class="opts.isCloseCls"&gt;         &lt;view class="unipop__ui_panel"&gt;             &lt;view v-if="opts.shade" class="unipop__ui_mask" @tap="shadeTaped"&gt;&lt;/view&gt;             &lt;view class="unipop__ui_main"&gt;                 &lt;view class="unipop__ui_child" :style="opts.style"&gt;                     &lt;!-- 标题 --&gt;                     &lt;view v-if="opts.title" class="unipop__ui_tit"&gt;{<!-- -->{opts.title}}&lt;/view&gt;                     &lt;!-- 内容 --&gt;                     &lt;view v-if="opts.content" class="unipop__ui_cnt" :style="opts.contentStyle"&gt;                         {<!-- -->{opts.content}}                     &lt;/view&gt;                     &lt;view v-if="opts.btns" class="unipop__ui_btns"&gt;                         &lt;text v-for="(item,index) in opts.btns" :key="index" class="btn" :style="item.style" @tap="btnTaped(item)"&gt;{<!-- -->{item.text}}&lt;/text&gt;                     &lt;/view&gt;                 &lt;/view&gt;                 &lt;!-- xclose --&gt;                 &lt;view v-if="opts.xclose" class="unipop__xclose" @tap="close"&gt;&lt;/view&gt;             &lt;/view&gt;         &lt;/view&gt;     &lt;/view&gt; &lt;/template&gt;</code></pre> <p>◆ 默认参数配置</p> <pre><code>data() {     return {         defaultOptions: {             isVisible: false,       //是否显示弹窗                          title: '',              //标题             content: '',            //内容             contentStyle: '',       //内容样式             style: null,            //自定义弹窗样式             skin: '',               //弹窗风格             icon: '',               //弹窗图标             xclose: false,          //自定义关闭按钮                          shade: true,            //遮罩层             shadeClose: true,       //点击遮罩关闭             opacity: '',            //遮罩透明度             time: 0,                //自动关闭秒数             end: null,              //销毁弹窗回调函数                          anim: 'scaleIn',        //弹窗动画  scaleIn(默认) | fadeIn | shake | top | right | bottom | left             position: '',           //弹窗位置  top | right | bottom | left                          btns: null,             //弹窗按钮         },         opts: {},         timer: null     } },</code></pre> <p>◆ 通过Object.assign函数进行参数合并处理</p> <pre><code>methods: {     // 显示弹窗事件（处理传参）     show(args) {         this.opts = Object.assign({}, this.defaultOptions, args, {isVisible: true})         // console.log(this.opts)                  // 自动关闭         if(this.opts.time) {             this.timer = setTimeout(() =&gt; {                 this.close()             }, this.opts.time * 1000)         }     },     ... }</code></pre> <p>好了，uni-app自定义弹窗组件介绍就到这里，希望能喜欢????????~~</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20337.htm">自家宠物猫轻微抓伤有一点渗血怎么办（自家猫咪抓了一点点血）</a></p>
+                                        <p>下一个：<a href="/news/article-20792.htm">领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20337.htm" title="自家宠物猫轻微抓伤有一点渗血怎么办（自家猫咪抓了一点点血）">自家宠物猫轻微抓伤有一点渗血怎么办（自家猫咪抓了一点点血）</a></li>
+                        <li class="py-2"><a href="/news/article-19420.htm" title="农大动物医院电话号码是多少（农大动物医院急诊电话）">农大动物医院电话号码是多少（农大动物医院急诊电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-27-share-clash-stash.htm" title="「8月27日」最高速度18.4M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「8月27日」最高速度18.4M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-high-speed-nodes.htm" title="「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-31-free-shadowrocket-node.htm" title="「7月31日」最高速度22.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「7月31日」最高速度22.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-13-clash-node.htm" title="「8月13日」最高速度22.1M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「8月13日」最高速度22.1M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-5-clash-stash-node.htm" title="「8月5日」最高速度18M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「8月5日」最高速度18M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-29-free-high-speed-nodes.htm" title="「9月29日」最高速度18.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月29日」最高速度18.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-clash-windows.htm" title="「9月11日」最高速度19.3M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「9月11日」最高速度19.3M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-18-free-clash-subscribe.htm" title="「7月18日」最高速度21.4M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「7月18日」最高速度21.4M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
