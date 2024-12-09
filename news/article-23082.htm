@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-23082.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基于.NetCore开发博客项目 StarBlog模型设计</title>
+        <meta name="description" content="前言 上一篇文章介绍（水）了新建项目的操作，本文开始终于进入正题要开始写代码了！ 对了，上一篇文章有朋友留言问管理端的用户名和密码是多少，这个是我疏忽了，没有做一个便捷的项目初始化功能，目前登录管理端" />
+        <link rel="icon" href="__ADDON__/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">基于.NetCore开发博客项目 StarBlog模型设计</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<h2 id="系列文章"><span style="font-size: 1.5em;">前言</span><br /></h2> <p>上一篇文章介绍<s>（水）</s>了新建项目的操作，本文开始终于进入正题要开始写代码了！</p> <p>对了，上一篇文章有朋友留言问管理端的用户名和密码是多少，这个是我疏忽了，没有做一个便捷的项目初始化功能，目前登录管理端需要在数据库的User表创建一个用户，后续我会完善角色和权限控制部分，然后给项目加一些命令行工具，就像<code>django-admin</code>那样。</p> <p>OK，本文介绍StarBlog博客项目的模型设计。</p> <h2 id="模型设计">模型设计</h2> <p>根据博客的功能需求，数据分成三类：</p> <ul> <li>文章相关（文章、文章分类）</li> <li>摄影/相册相关</li> <li>推荐内容配置（推荐文章、分类、图片；置顶文章、分类）</li> </ul> <h2 id="代码">代码</h2> <p>由于我还没学DDD，<s>（后续学了Abp vNext框架的话可能会用新技术进行重构）</s>，所以先用传统的MVC架构来规划项目~</p> <p>回顾上一篇文章，我们新建了几个项目，现在，我们要把数据模型写在<code>StarBlog.Data</code>项目中。</p> <p>打开IDE，在<code>StarBlog.Data</code>项目中新建一个目录，名为<code>Models</code>，接下来的数据模型全都要放到这个目录/命名空间下。</p> <p>由于项目代码已经在GitHub开源了，数据模型代码我就不全部贴上来了，先看看创建完成之后的目录结构。</p> <p>代码可以这里看到：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/tree/master/StarBlog.Data/Models"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/tree/master/StarBlog.Data/Models</a></p> <pre><code>Models ├── Category.cs			 # 文章分类 ├── FeaturedCategory.cs  # 推荐分类 ├── FeaturedPhoto.cs     # 推荐图片 ├── FeaturedPost.cs      # 推荐文章 ├── Photo.cs             # 摄影图片 ├── Post.cs              # 文章 ├── TopPost.cs           # 置顶文章 └── User.cs              # 用户</code></pre> <p>为了便于读者理解项目设计和模型间的关系，我们挑几个关键的说一下。</p> <h2 id="categorycs">Category.cs</h2> <p>文章分类。完整代码见：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Data/Models/Category.cs"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Data/Models/Category.cs</a></p> <p>StarBlog博客支持markdown批量导入，然后以目录结构作为文章的分类，目录名就是分类名，且支持多级分类。</p> <p>部分代码如下：</p> <pre><code class="language-c#">public class Category {     public int Id { get; set; }     public string Name { get; set; }     public int ParentId { get; set; }     public bool Visible { get; set; } = true; }</code></pre> <h2 id="postcs">Post.cs</h2> <p>完整代码见：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Data/Models/Post.cs"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Data/Models/Post.cs</a></p> <p>博客网站，最重要的就是文章，文章的模型部分代码如下</p> <pre><code class="language-c#">namespace StarBlog.Data.Models;  public class Post {     // 省略部分字段...     public string? Status { get; set; }     public bool IsPublish { get; set; }     public string? Path { get; set; }     public DateTime CreationTime { get; set; }     public DateTime LastUpdateTime { get; set; }     public string? Categories { get; set; } }</code></pre> <p>首先看<code>Status</code>和<code>IsPublish</code>字段，一个是文章状态（未完成、未修改、未发布），一个是否发布。最终决定文章是否在网站上展示是<code>IsPublish</code>字段，那<code>Status</code>字段存在的意义是啥？</p> <p>答案：为了保留导入前的文章状态。</p> <p>本项目的博客支持导入整个目录markdown文件作为文章，我的习惯是会在markdown文件的文件名最前面写上这个文章的状态，比如一篇未完成的文章，它的文件名是：<code>（未完成）StarBlog博客开发笔记(3)：模型设计</code>，所以这个<code>Status</code>字段就是要把<code>（未完成）</code>中的这个状态识别提取出来，（具体用到的是正则表达式，这是后面要介绍的内容）。</p> <p>然后是<code>Path</code>字段，这个字段表示文章作为markdown文件导入前存放的相对位置，比如导入了<code>D:\blog</code>这个目录里的所有文章，而这个目录的结构是这样的：</p> <pre><code>blog ├── Asp-Net-Core学习笔记 │   ├── Asp-Net-Core学习笔记：1.MVC入门篇.md │   ├── Asp-Net-Core学习笔记：2.MVC视图、模型、持久化、文件、错误处理、日志.md │   ├── Asp-Net-Core学习笔记：3.使用SignalR实时通信框架开发聊天室.md │   ├── Asp-Net-Core学习笔记：4.Blazor-WebAssembly入门.md │   ├── Asp-Net-Core学习笔记：5.构建和部署.md │   ├── Asp-Net-Core学习笔记：WebApi开发实践.md │   ├── Asp-Net-Core学习笔记：身份认证入门.md │   ├── Asp-Net-Core学习笔记：部署，早知道，还是docker，以及一点碎碎念.md ├── Asp-Net-Core开发笔记 │   ├── Asp-Net-Core开发笔记：使用NPM和gulp管理前端静态文件.md │   ├── Asp-Net-Core开发笔记：在docker部署时遇到一个小坑.md │   └── Asp-Net-Core开发笔记：接口返回json对象出现套娃递归问题.md ├── 不吹不黑，跨平台框架AspNetCore开发实践杂谈.md ├── 梦想家装平台开发记录，Asp-Net-Core上手实践.md ├── （未修改）How-to-Connect-to-MySQL-from--NET-Core.md ├── （未修改）使用Ocelot实现Api网关.md ├── （未发布）跨域配置.md ├── （未完成）ASP-NET-Core-使用-Hangfire-定时任务.md ├── （未完成）Core-定时任务之HangFire.md ├── （未完成）使用-ASP-NET-Core-和-Hangfire-实现-HTTP-异步化方案.md ├── （未完成）使用Sentry.md └── （未完成）在xunit里使用依赖注入.md</code></pre> <p>那对于在<code>blog/AspNetCore</code>目录下的文章<code>（未发布）跨域配置.md</code> 来说，它的<code>Path</code>字段就是<code>AspNetCore</code></p> <p>对于在<code>blog/AspNetCore/Asp-Net-Core学习笔记</code>目录下的文章来说，<code>Path</code>字段就是<code>AspNetCore/Asp-Net-Core学习笔记</code></p> <p>这个<code>Path</code>字段的意义，就在于实现前面说的多级分类，同时最下面的<code>Categories</code>字段，也是为了实现多级分类准备的。</p> <p>在文章导入的过程中，目录名称作为文章分类名创建了文章的分类，同时记录分类ID到文章的<code>CategoryId</code>字段中，如果是多级分类的话，文章的<code>CategoryId</code>字段记录的是最后一个分类，父分类是不在这个<code>CategoryId</code>里的，虽然<code>Category</code>有个<code>ParentId</code>字段可以找到父分类，但是在实际使用的时候比较麻烦，所以我又加了这个<code>Categories</code> 字段，把文章的分类层级记录起来，其内容类似这样<code>1,2,3</code> ，用逗号分隔开分类ID</p> <p>这样前台展示的时候只需要用<code>services</code> 把<code>Categories</code> 字段处理成<code>List&lt;Category&gt;</code> 就可以了。</p> <h2 id="photocs">Photo.cs</h2> <p>对了，还有图片模型，因为平时有空会拍照，所以做个摄影分享的功能，这个模型就存上传的图片。</p> <p>部分代码如下</p> <pre><code class="language-c#">public class Photo {     // 省略部分字段...     public string Location { get; set; }     public string FilePath { get; set; }     public long Height { get; set; }     public long Width { get; set; } }</code></pre> <p>图片的高度和宽度字段我一开始是没考虑的，不过在做瀑布流展示的时候发现没有宽高度不行，于是找到了<code>SixLabors.ImageSharp</code> 这个库读取图片信息，这个库功能还挺强的，推荐一波~</p> <p><code>Location</code>拍摄地点现在只能手动输入，我之前用Python做过一个相册的项目，可以根据图片的Exif信息读取拍摄的GPS信息，然后用逆地址解析的方法解析出拍摄的地址，这个先记个todo，后面来实现~</p> <h2 id="其他的">其他的</h2> <p>三个Featured开头的是推荐相关的，可以在后台配置；</p> <p>然后置顶文章和置顶分类只能分别设置一个，展示在网站主页。</p> <p>大概就这些了，下篇文章见~</p> <p>同时所有项目代码已经上传GitHub，欢迎各位大佬Star/Fork！</p> <ul> <li>博客后端+前台项目地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog</a></li> <li>管理后台前端项目地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog-Admin"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog-Admin</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-22626.htm">济南宠物领养中心在哪个位置好（济南宠物领养中心在哪个位置好一点）</a></p>
+                                        <p>下一个：<a href="/news/article-23084.htm">猫粮加工机器图片（猫粮加工厂需要什么设备）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-4-free-node-subscribe-links.htm" title="「10月4日」最高速度19.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「10月4日」最高速度19.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node.htm" title="「11月7日」最高速度21.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「11月7日」最高速度21.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-15-free-clash-stash.htm" title="「8月15日」最高速度21.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「8月15日」最高速度21.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-24-clash-windows.htm" title="「8月24日」最高速度19.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「8月24日」最高速度19.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-10-clash-node.htm" title="「7月10日」最高速度21.1M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「7月10日」最高速度21.1M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-ssr-node.htm" title="「11月24日」最高速度18M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月24日」最高速度18M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-node-subscribe.htm" title="「11月30日」最高速度19.9M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「11月30日」最高速度19.9M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18743.htm" title="使用Android实现一个悬浮在软键盘上的输入栏_Android">使用Android实现一个悬浮在软键盘上的输入栏_Android</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-node-share-links.htm" title="「9月30日」最高速度18.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「9月30日」最高速度18.3M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-shadowrocket-node.htm" title="「9月27日」最高速度20.6M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「9月27日」最高速度20.6M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
