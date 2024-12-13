@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-25400.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docker知识点问题总结</title>
+        <meta name="description" content="1.解释基本的Docker使用工作流程是怎样的  从Dockerfile开始，Dockerfile是镜像的源代码； 创建Dockerfile后，可以构建它以创建容器的镜像。镜像只是“源代码”的“编译版" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">Docker知识点问题总结</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> </h1> <h2><a id="1Docker_1" rel="nofollow"></a>1.解释基本的Docker使用工作流程是怎样的</h2> <ol> <li>从Dockerfile开始，Dockerfile是镜像的源代码；</li> <li>创建Dockerfile后，可以构建它以创建容器的镜像。镜像只是“源代码”的“编译版本”，即Dockerfile；</li> <li>获得容器的镜像后，应使用注册表重新分发容器。注册表就像一个git存储库，可以推送和拉取镜像；接下来，可以使用该图像来运行容器。在许多方面，正在运行的容器与虚拟机（但没有虚拟机管理程序）非常相似。</li> <li>通过镜像就能运行相应的容器。</li> <li>使用完成之后，就需要将容器删除。</li> </ol> <h2><a id="2_8" rel="nofollow"></a>2.容器内部机制</h2> <p>每个容器都在自己的命名空间中运行，但使用与所有其他容器完全相同的内核。发生隔离是因为内核知道分配给进程的命名空间，并且在API调用期间确保进程只能访问其自己的命名空间中的资源。</p> <h2><a id="3Docker_11" rel="nofollow"></a>3.Docker的架构</h2> <p>docker引擎（包含Docker客户端&amp;服务端）,docker镜像，docker容器，Registry镜像仓库。其C/S架构。</p> <h2><a id="4Docker_14" rel="nofollow"></a>4.什么是Docker</h2> <p>Docker是一个可以把开发的应用程序自动部署到容器的开源引擎。</p> <h2><a id="4__18" rel="nofollow"></a>4. 容器和主机部署应用的区别</h2> <p>容器的中心思想就是秒级启动；一次封装、到处运行；这是主机部署应用无法达到的效果，但同时也更应该注重容器的数据持久化问题。<br /> 另外，容器部署可以将各个服务进行隔离，互不影响，这也是容器的另一个核心概念。</p> </h1> <h2><a id="1Docker_23" rel="nofollow"></a>1.Docker的常用命令</h2> <p>docker run 启动镜像</p> <p>docker kill 立即停止容器</p> <p>docker stop 有序停止容器</p> <p>docker start 启动被挂起的容器</p> <p>docker pull 拉取或者更新指定镜像</p> <p>docker push 将镜像推送至远程仓库</p> <p>docker rm 删除容器</p> <p>docker rmi 删除镜像</p> <p>docker images 列出所有镜像</p> <p>docker ps 列出所有容器</p> <p>docker logs 看后台的日志</p> <p>docker attach 同样操作的是已运行的容器，可以将本机标准输入（键盘输入）输到容器中，也可以将容器的输出显示在本机的屏幕上，如果你想查看容器运行过程中产生的标准输入输出，用attach。</p> <p>docker exec 在已运行的容器中，执行命令，操作对象是容器，如果你要进入已运行的容器，并且执行命令，用exec。</p> <h2><a id="2Dockerfile_50" rel="nofollow"></a>2.Dockerfile的常用指令</h2> <p>FROM：指定基础镜像</p> <p>LABEL：功能是为镜像指定标签</p> <p>RUN：运行指定的命令</p> <p>CMD：容器启动时要运行的命令</p> <p>ONBUILD：当镜像用作另一个镜像构建的基础时，该指令向镜像添加将在稍后执行的触发指令。如果要构建将用作构建其他镜像的基础的镜像（例如，可以使用特定于用户的配置自定义的应用程序构建环境或守护程序）。</p> <h2><a id="3_60" rel="nofollow"></a>3.容器与主机之间的数据拷贝命令</h2> <p>docker cp 命令用于容器与主机之间的数据拷贝<br /> 主机到容器：<br /> docker cp /www 96f7f14e99ab:/www/<br /> 容器到主机：<br /> docker cp 96f7f14e99ab:/www /tmp/</p> <h2><a id="4Docker_67" rel="nofollow"></a>4.如何在生产中监控Docker</h2> <p>Docker提供docker stats和docker事件等工具来监控生产中的Docker。我们可以使用这些命令获取重要统计数据的报告。</p> <ul> <li>Docker统计数据：当我们使用容器ID调用docker stats时，我们获得容器的CPU，内存使用情况等。它类似于Linux中的top命令。</li> <li>Docker事件：Docker事件是一个命令，用于查看Docker守护程序中正在进行的活动流。<br /> 一些常见的Docker事件是：attach，commit，die，detach，rename，destroy等。我们还可以使用各种选项来限制或过滤我们感兴趣的事件。</li> <li>也可以用一些第三方的插件，比如cAvisor。</li> <li>直接进入容器系统，手动查看系统状态。</li> </ul> <h2><a id="5_75" rel="nofollow"></a>5.如何临时退出一个正在交付的容器的终端、而不中止它？</h2> <p>按Ctrl+p 后按Ctrl+q、如果按Ctrl+c 会使容器内的应用进程终止，进而会使容器终止。</p> <h2><a id="6dockercompose__docker_swarm_78" rel="nofollow"></a>6.docker-compose 和 docker swarm的区别</h2> <p>使用Docker compose可以用YAML文件来定义一组需要启动的容器，以及容器运行时的属性。docker-compose用来对这一组容器进行操作。只能管理当前主机上的docker集群。<br /> docker swarm 原生的Docker集群管理工具，依赖docker本身，很多重要功能依赖团队二次开发。且社区不够活跃，一般公司生产环境会选择k8s，个人项目或者容器数量较少可选swarm,只需要docker即可完成，相对较轻。可以管理多机上的容器，而且功能丰富，具有负载均衡、扩容等功能。</p> </h1> <h2><a id="1Docker_84" rel="nofollow"></a>1.Docker与虚拟机有何不同</h2> <p>Docker是一个应用层的抽象，容器之间通过网络命名空间进行隔离，多个容器共享同一个操作系统内核。VM是对物理硬件层的抽象，每个VM都包含独立的操作系统，重且启动缓慢。VM主要为了提供系统环境，容器主要是为了提供应用环境。</p> <p>Docker主要专注于在应用程序容器内自动部署应用程序。应用程序容器旨在打包和运行单个服务，而系统容器则设计为运行多个进程，如虚拟机。因此，Docker被视为容器化系统上的容器管理或应用程序部署工具。</p> <ul> <li>容器不需要引导操作系统内核，因此可以在不到一秒的时间内创建容器。此功能使基于容器的虚拟化比其他虚拟化方法更加独特和可取。</li> <li>由于基于容器的虚拟化为主机增加了很少或没有开销，因此基于容器的虚拟化具有接近本机的性能。</li> <li>对于基于容器的虚拟化，与其他虚拟化不同，不需要其他软件。</li> <li>主机上的所有容器共享主机的调度程序，从而节省了额外资源的需求。</li> <li>与虚拟机映像相比，容器状态（Docker或LXC映像）的大小很小，因此容器映像很容易分发。</li> <li>容器中的资源管理是通过cgroup实现的。Cgroups不允许容器消耗比分配给它们更多的资源。虽然主机的所有资源都在虚拟机中可见，但无法使用。这可以通过在容器和主机上同时运行top或htop来实现。所有环境的输出看起来都很相似。</li> </ul> <h2><a id="2DockerLXCLinux_Container_97" rel="nofollow"></a>2.Docker与LXC（Linux Container）的关系</h2> <p>Docker不是虚拟化方法。它依赖于实际实现基于容器的虚拟化或操作系统级虚拟化的其他工具。为此，Docker最初使用LXC驱动程序，然后移动到<strong>libcontainer</strong>现在重命名为runc。</p> <p>LXC是一种容器引擎，所谓容器引擎就是一种驱动和管理容器生命周期的runtime工具。</p> <p>所谓runtime管理工具，就是指只对容器运行时的相关状态和操作进行管理的工具。</p> <p>LXC利用Linux上相关技术实现容器，Docker则在如下的几个方面进行了改进：</p> <ul> <li>移植性：通过抽象容器配置，容器可以实现一个平台移植到另一个平台；</li> <li>镜像系统：基于AUFS的镜像系统为容器的分发带来了很多的便利，同时共同的镜像层只需要存储一份，实现高效率的存储；</li> <li>版本管理：类似于GIT的版本管理理念，用户可以更方面的创建、管理镜像文件；</li> <li>仓库系统：仓库系统大大降低了镜像的分发和管理的成本；</li> <li>周边工具：各种现有的工具（配置管理、云平台）对Docker的支持，以及基于Docker的Pass、CI等系统，让Docker的应用更加方便和多样化。</li> </ul> <h2><a id="3Libcontainer_112" rel="nofollow"></a>3.Libcontainer原理</h2> <p>Libcontainer是一种容器引擎，是一种runtime管理工具，Docker所有对容器的管理操作都是通过调用Libcontainer的API来实现的。</p> <p>Libcontainer提供的功能有：运行容器、暂停容器、恢复容器、向容器发送信号、获取容器信息、修改容器配置、Checkpoint容器。</p> <p>容器的技术核心就是Nampspace和Cgroup，所谓运行一个容器就是创建属于容器的Namespace和Cgroup。</p> <p><strong>Cgroup：</strong> 是control group的缩写，属于Linux内核提供的一个特性，用于限制和隔离一组进程对系统资源的使用，也就是做资源Qos，这些资源主要包括CPU、内存、IO和网络。Cgroup可以对进程进行任意分组，不同组获取资源的限额不同。Cgroup的原生接口通过cgroupfs提供，类似于procfs和sysfs，是一种虚拟文件系统。Cgroup通过内部的子系统实现不同资源的分配管理。</p> <p><strong>NameSpace:</strong> 是将内核的全局资源做封装，使得每个Namespace都有一份独立的资源，不同进行在各自的Namespace内对同一种资源的使用不会相互干扰。</p> <p>对Namespace的操作主要通过这三个系统调用来完成的：</p> <ul> <li>clone：用来给新的进程创建新的Namespace。</li> <li>setns：用来给已有的进程创建新的Namespace的。</li> <li>unshare：将进程放到已有的Namespace中。</li> </ul> <p>Linux内核总共实现了六种Namespace：</p> <ul> <li>UTS Namespace<br /> 用于对主机名和域名进行隔离。</li> <li>IPC Namespace<br /> 用于进程间通信的消息隔离和标识。</li> <li>PID Namespace<br /> 用于隔离进程PID号，这样不同的Namespace中的进程PID号就可以是一样的了。</li> <li>Mount Namespace<br /> 用来隔离文件系统挂载点，每个进程能看到的文件系统都记录在/proc/$$/mounts里，进程系统对文件系统挂载卸载就不会影响到其他的Namespace。</li> <li>Network Namespace<br /> 用于网络相关资源的隔离，每个Network Namespace都有各自的网络设备、IP、路由表、端口号等。</li> <li>User Namespace<br /> 用于隔离用户和组ID，一个进程在Namespace里的用户和组ID与它在host里的ID可以不一样，同一个用户在不同Namespace的权限也不同了。</li> </ul> <p><strong>创建容器：</strong></p> <p>具体流程入下图所示。</p> <ol> <li>在p.cmd.Start()的时候，就创建了新的Namespace，子进程就在自己的Namespace中了。</li> <li>然后Daemon线程执行p.manager.Apply()操作的时候，就会创建新的Cgroup，并把刚创建的子进程放到新的Cgroup中。</li> <li>进一步，daemon线程在做了一些网络配置之后，就会把容器的配置信息通过管道发给子进程，同时让子进程继续执行，而daemon线程则进入pip wait状态。</li> <li>容器剩下的初始化操作就时由子进程完成了。其中很重要的一步就是rootfs切换，首先子进程会根据config中的配置，把host上的相关目录mount到容器的rootfs中，或挂载到一些虚拟文件系统上，这些挂载信息可能时-v指定的volume、容器的Cgroup信息、proc文件系统等。然后正式执行容器中的init进程。</li> <li>当容器已经完成创建和运行操作，通知通知父进程，daemon线程会回到Dockers的函数中，等待执行容器进程结束的操作，整个过程完成。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/9ab3c5cb9e3adee6bd12cbd763afd7d5.jpg" alt="Docker知识点问题总结"></li> </ol> <ul> <li>创建Namespace<br /> 通过在clone<strong>系统调用</strong>中传入相应的Namespace的flag来实现的。Libcontainer只需要知道Docker那边传过来的参数中包含了哪些clone flag，然后将其而配置到cmd.SysProcAttr.CloneFlags中，之后执行cmd.Start()就创建出来一个拥有自己命名空间的子进程。</li> <li>创建Cgroup<br /> 创建一个Cgroup就是在cgroupfs的挂载目录中创建一个新的文件夹，Cgroup的子系统中队不同的资源进行管理，所系，每个资源目录下都需要创建一个新的文件夹。创建时需要把容器的1号进程放到Cgroup中，确保所有容器相关的进程都在这个新的Cgroup中。</li> </ul> <h2><a id="4runC_156" rel="nofollow"></a>4.runC原理</h2> <p>runC也是一款容器引擎，是runtime引擎，它由Libcontainer演变而来，现在runC已经代替Libcontainer称为Docker的引擎了。</p> <p>runC在底层还是使用了Libcontainer的库。</p> <p>runC通过读取用户编写的JSON文件，获取容器所需的所有信息，然后把内容填充到Libcontainer提供的Config文件中，让Libcontainer去做底层的工作。</p> <h2><a id="5Memory__CPU__163" rel="nofollow"></a>5.容器隔离不彻底，Memory 和 CPU 隔离不彻底，怎么处理解决这个问题？</h2> <p>由于 /proc 文件系统是以只读的方式挂载到容器内部，所以在容器内看到的都是宿主机的信息，包括 CPU 和 Memory，docker 是以 cgroups 来进行资源限制的，而 jdk1.9 以下版本目前无法自动识别容器的资源配额，1.9以上版本会自动识别和正常读取 cgroups 中为容器限制的资源大小。</p> <p><strong>Memory 隔离不彻底</strong></p> <p>Docker 通过 cgroups 完成对内存的限制，而 /proc 文件目录是以只读的形式挂载到容器中，由于默认情况下，Java 压根就看不到 cgroups 限制的内容的大小，而默认使用 /proc/meminfo 中的信息作为内存信息进行启动，默认情况下，JVM 初始堆大小为内存总量的 1/4，这种情况会导致，如果容器分配的内存小于 JVM 的内存， JVM 进程会被 linux killer 杀死。</p> <p>那么目前有几种解决方式：</p> <p>（1）升级 JDK 版本到1.9以上，让 JVM 能自动识别 cgroups 对容器的资源限制，从而自动调整 JVM 的参数并启动 JVM 进程。</p> <p>（2）对于较低版本的JDK，一定要设置 JVM 初始堆大小，并且JVM 的最大堆内存不能超过容器的最大内存值，正常理论值应该是：容器 limit-memory = JVM 最大堆内存 + 750MB。</p> <p>（3）使用 lxcfs ，这是一种用户态文件系统，用来支持LXC 容器，lxcfs 通过用户态文件系统，在容器中提供下列 procfs 的文件，启动时，把宿主机对应的目录 /var/lib/lxcfu/proc/meminfo 文件挂载到 Docker 容器的 /proc/meminfo 位置后，容器中进程（JVM）读取相应文件内容时，lxcfs 的 fuse 将会从容器对应的 cgroups 中读取正确的内存限制，从而获得正确的资源约束设定。</p> <p><strong>CPU 隔离不彻底</strong></p> <p>JVM GC （垃圾回收）对于 java 程序执行性能有一定的影响，默认的 JVM 使用如下公式： ParallelGCThreads = ( ncpu &lt;= 8 ) ? ncpu：3 + （ncpu * 5）/ 8 来计算并行 GC 的线程数，但是在容器里面，ncpu 获取的就是所在宿主机的 cpu 个数，这会导致 JVM 启动过多的 GC 线程，直接的结果就是 GC 的性能下降，java 服务的感受就是：延时增加， TPS 吞度量下降，针对这种问题，也有以下几种解决方案：</p> <p>（1）显示传递 JVM 启动参数：“-XX: ParallelGCThreads" 告诉 JVM 应该启动多少个并行 GC 线程，缺点是需要业务感知，而且需要为不同配置的容器传递不同的 JVM 参数。</p> <p>（2）在容器内使用 Hack 过的 glibc ，使 JVM 通过 sysconf 系统调用能正确获取容器内 CPU 资源核数，优点是业务无感知，并且能自动适配不同配置的容器，缺点是有一定的维护成本。</p> <p>作者：莹宝与梨梦<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/2de643caefc1"  rel="nofollow">链接</a></p> </h1> <h2><a id="1Docker_190" rel="nofollow"></a>1.构建Docker镜像应该遵循哪些原则</h2> <p>整体原则上、尽量保持镜像功能的明确和内容的精简、要点包括：</p> <ol> <li>尽量选取满足需求但较小的基础系统镜像；</li> <li>清理编译生成的文件、安装包的缓存等临时文件；</li> <li>安装各个软件时候要指定准确的版本号、并避免引入不需要的依赖；</li> <li>从安全的角度考虑、应用尽量使用系统的库和依赖；</li> <li>使用Dockerfile创建镜像时候要添加dockerignore文件或使用干净的工具目录。</li> </ol> <h2><a id="2_198" rel="nofollow"></a>2.如何批量清理临时镜像文件？</h2> <pre><code class="prism language-shell"><span class="token function">sudo</span> docker rmi<span class="token variable"><span class="token variable">$(</span><span class="token function">sudo</span> docker images -q -f danging<span class="token operator">=</span>true<span class="token variable">)</span></span></code></pre> <p>批量的停止容器，删除启动过了的容器也都可以这样来命令。</p> <h2><a id="3DockerfileCOPYADD_206" rel="nofollow"></a>3.Dockerfile中的命令COPY和ADD命令有什么区别？</h2> <p>一般而言，虽然ADD并且COPY在功能上类似，但是首选COPY。</p> <p>那是因为它比ADD更易懂。COPY仅支持将本地文件复制到容器中，而ADD具有一些功能（如仅限本地的tar提取和远程URL支持），这些功能并不是很明显。因此，ADD的最佳用途是将本地tar文件自动提取到镜像中，如ADD rootfs.tar.xz /。</p> <p>唯一差别在于ADD源文件可以支持url且可以对压缩文件进行解压操作。而COPY针对的是当前构建环境。</p> <h2><a id="4_214" rel="nofollow"></a>4.容器和镜像的区别</h2> <p>镜像是一个只读模板，包括运行容器所需的数据，其内容在构建之后就不会被改变，可以用来创建新的容器。 镜像由多个只读层组成，容器在只读层的基础上多了一个读写层。</p> <h2><a id="5Dockerfilecmdentry_217" rel="nofollow"></a>5.Dockerfile中的命令cmd和entry差异</h2> <p>CMD 用于指定容器启动时候默认执行的命令。可以被docker run指定的启动命令覆盖。ENTRYPONIT 指令可让容器以应用程序或者服务的形式运行。一般不会被docker run指定的启动命令覆盖。dockerfile中的多个CMD &amp; ENTRYPONIT只有最后一个会生效。</p> </h1> <h2><a id="1Docker_222" rel="nofollow"></a>1.Docker网络的五种模式</h2> <ul> <li>none：不为容器配置任何网络功能。</li> <li>container：与另一个运行中的容器共享Network Namespace，共享相同的网络视图。</li> <li>host：与主机共享Network Namespace，容器有完整的权限可以操纵主机的协议栈、路由表和防火墙，所以是不安全的。</li> <li>bridge：Dokcer设计的NAT网络模型。Docker Daemon启动时会在主机创建一个Linux网桥，容器启动时，Docker会创建一堆veth pair设备，一端连在容器的Network Namespace上，另一端连载网桥上，从而实现网桥上的容器都能通信。</li> <li>overlay：Docker原生的跨主机多子网模型。</li> </ul> </h1> <h2><a id="1Docker_229" rel="nofollow"></a>1.如何更改Docker的默认存储设置？</h2> <p>Docker的默认存放位置是/var/lib/docker,如果希望将Docker的本地文件存储到其他分区，可以使用Linux软连接的方式来做。</p> </h1> <h2><a id="1Docker_232" rel="nofollow"></a>1.Docker的配置文件放在那里。如何修改配置？</h2> <p>Ubuntu系统下Docker的配置文件是/etc/default/docker，CentOS系统配置文件存放在/etc/sysconfig/docker</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-24932.htm">青浦二中本科率2019（青浦二中本科录取率2019）</a></p>
+                                        <p>下一个：<a href="/news/article-25401.htm">厦门有没有宠物领养中心（厦门宠物救助领养中心地址）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-free-high-speed-nodes.htm" title="「10月29日」最高速度23M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「10月29日」最高速度23M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-high-speed-nodes.htm" title="「11月5日」最高速度19.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月5日」最高速度19.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-high-speed-nodes.htm" title="「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-15-clash-v2ray-ss-ssr.htm" title="「7月15日」最高速度19M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「7月15日」最高速度19M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19873.htm" title="猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）">猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-30-clash-node-daily-updates.htm" title="「7月30日」最高速度20.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月30日」最高速度20.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-clash-stash-node.htm" title="「10月12日」最高速度22.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月12日」最高速度22.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-20-free-subscribe-node.htm" title="「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-19-clash-node-daily-updates.htm" title="「9月19日」最高速度18M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「9月19日」最高速度18M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-clash-stash.htm" title="「11月8日」最高速度22.5M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「11月8日」最高速度22.5M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
