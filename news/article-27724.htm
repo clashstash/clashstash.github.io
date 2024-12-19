@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-27724.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Missing URI template variable</title>
+        <meta name="description" content="2019独角兽企业重金招聘Python工程师标准&gt;&gt;&gt;    异常：Missing URI template variable ...... &nbsp;原因： @PathVaria" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">Missing URI template variable</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div class="content" id="articleContent"> <div class="ad-wrap"> <p><a style="color:#A00;font-weight:bold;" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://my.oschina.net/u/2663968/blog/3061697"  rel="nofollow">2019独角兽企业重金招聘Python工程师标准&gt;&gt;&gt; </a> <img decoding="async" src="http://img.555519.xyz/uploads/20230207/fcb288be5ba514097e6b7689549102df.jpg" alt="Missing URI template variable"></p> </p></div> <p>异常：<strong><span style="color:#B22222;">Missing URI template variable ......</span></strong></p> <p>&nbsp;原因：<strong><span style="color:#B22222;"> @PathVariable 使用 参数名和 url 上预设的不一样</span></strong></p> <p>下面的图是我修改后的</p> <p><img fetchpriority="high" decoding="async" height="160" src="http://img.555519.xyz/uploads/20230207/c1cb7a6d525852eb858cb305b76164fc.jpg" alt="Missing URI template variable" width="1129"></p> <p>如果@RequestMapping中表示为”item/{id}”，id和形参名称一致，@PathVariable不用指定名称。如果不一致，例如”item/{ItemId}”则需要指定名称@PathVariable(“itemId”)。</p> <p>例如：</p> <pre><code class="language-java">@RequestMapping(value = "/findUserByEmployeeNumber/{EmployeeNumber}",method = RequestMethod.GET)     public ResponseEntity&lt;TodoUser&gt; findByNumber(@PathVariable @Valid String employeeNumber){         ...     }</code></pre> <p><code>@RequestMapping(value = "/findUserByEmployeeNumber/{EmployeeNumber}</code>中{EmployeeNumber}变量名需要和<code>@PathVariable @Valid String employeeNumber</code>中一样&nbsp;</p> <p>改成一样就ok了</p> <p> <span id="OSC_h3_1"></span> </p> <h3>两个方法</h3> <p><span style="color:#FF8C00;"><strong>方法一：参数名一致</strong></span></p> <pre><code class="language-java">@RequestMapping(value = "/findUserByEmployeeNumber/{employeeNumber}",method = RequestMethod.GET)     public ResponseEntity&lt;TodoUser&gt; findByNumber(@PathVariable @Valid String employeeNumber){         ...     }</code></pre> <p><span style="color:#FF8C00;"><strong>方法二：添加别名</strong></span></p> <pre><code class="language-java">@RequestMapping(value = "/findUserByEmployeeNumber/{employeeNumber}",method = RequestMethod.GET)     public ResponseEntity&lt;TodoUser&gt; findByNumber(@PathVariable("employeeNumber") @Valid String Number){         ...     }</code></pre> <p>&nbsp;</p> <p>参考：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/xhyxxx/article/details/76111196"  rel="nofollow">http://blog.csdn.net/xhyxxx/article/details/76111196</a> &nbsp;感谢！</p> <div class="ad-wrap"> <div id="blog-title-ad">    <ins class="adsbygoogle"></ins>   </div> </p></div> </div> <p>转载于:https://my.oschina.net/zjllovecode/blog/1581314</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-27264.htm">动物医院仪器设备清单 动物医院仪器设备清单以及价格</a></p>
+                                        <p>下一个：<a href="/news/article-27728.htm">开个小型宠物食品加工厂前景怎么样啊 开个小型宠物食品加工厂前景怎么样啊</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21679.htm" title="打过疫苗的猫抓破了一点皮需要打狂犬疫苗吗（打过疫苗的猫抓出血后需不需要***）">打过疫苗的猫抓破了一点皮需要打狂犬疫苗吗（打过疫苗的猫抓出血后需不需要***）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-7-free-ssr-node.htm" title="「9月7日」最高速度19.6M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「9月7日」最高速度19.6M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-16-node-share-links.htm" title="「8月16日」最高速度21.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「8月16日」最高速度21.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-16-node-share-links.htm" title="「7月16日」最高速度20.8M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「7月16日」最高速度20.8M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-subscribe-node.htm" title="「12月2日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「12月2日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-node-subscribe.htm" title="「12月12日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月12日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-node-subscribe-links.htm" title="「9月3日」最高速度22.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「9月3日」最高速度22.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25401.htm" title="厦门有没有宠物领养中心（厦门宠物救助领养中心地址）">厦门有没有宠物领养中心（厦门宠物救助领养中心地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-12-free-clash.htm" title="「7月12日」最高速度21.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「7月12日」最高速度21.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-clash-subscribe.htm" title="「11月11日」最高速度21.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月11日」最高速度21.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
