@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-28655.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js  查找字符串中指定字符 模糊查询  不区分大小写</title>
+        <meta name="description" content="js &nbsp;查找特定字符 模糊查询 &nbsp;不区分大小写   var str = "hello  world ! hello  coder!" ;   //查找‘HELLO’是否存在,找不到" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">js  查找字符串中指定字符 模糊查询  不区分大小写</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>js &nbsp;查找特定字符 模糊查询 &nbsp;不区分大小写</strong></p> <pre><code>  var str = "hello  world ! hello  coder!" ;   //查找‘HELLO’是否存在,找不到返回null   var reg = new RegExp('HELLO','i') ;   var isHas = str.match(reg);   console.log(isHas);    //打印结果： ["hello", index: 0, input: "hello  world ! hello  coder!", groups: undefined]</code></pre> <pre><code>var str="Hello world!"; //查找"Hello" var patt=new RegExp('HELLO','i') ; var result=patt.test(str); console.log(result) // true</code></pre> <p>如上两种，用正则new RegExp，test/match查找可以实现，不区分大小写</p> <p>js 查找字符串中是否包含指定的字符串</p> <p>1、indexOf()</p> <pre><code>var str = "123"; console.log(str.indexOf("3") != -1 ); // true</code></pre> <p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。如果要检索的字符串值<strong>没有找到，则该方法返回 -1</strong>。</p> <p>2、includes()</p> <pre><code>var str = "Hello world, welcome to the Runoob。"; var n = str.includes("world"); //true</code></pre> <p>includes() 方法用于判断字符串是否包含指定的子字符串，如果找到匹配的字符串则返回 true，否则返回 false。注意： includes() 方法<strong>区分</strong>大小写。</p> <p>3、search()</p> <pre><code>var str="Visit W3School!" console.log(str.search(/W3School/)) //6  var str="Visit W3School!" console.log(str.search('W3School')) //6</code></pre> <p>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。如果匹配到字符串则返回，字符串所在索引。</p> <p>4、match()</p> <pre><code>var str="The rain in SPAIN stays mainly in the plain"; var n=str.match(/ain/g); // ain,ain,ain</code></pre> <p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。注意： includes() 方法不区分大小写。</p> <p>5、test()</p> <pre><code>if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { &nbsp;&nbsp;&nbsp;&nbsp;console.log("移动") } else { &nbsp;&nbsp;&nbsp;&nbsp;console.log("PC") }  var str="Hello world!"; //查找"Hello" var patt=/Hello/g; var result=patt.test(str); console.log(result) // true</code></pre> <p>test() 方法用于检测一个字符串是否匹配某个模式。如果字符串中有匹配的值返回 true ，否则返回 false。</p> <p>6、exec()</p> <pre><code>var str="Hello world!"; //查找"Hello" var patt=/Hello/g; var result=patt.exec(str); console.log(result) // Hello</code></pre> <p>exec() 方法用于检索字符串中的正则表达式的匹配。如果字符串中有匹配的值返回该匹配值，否则返回 null。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28184.htm">领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用</a></p>
+                                        <p>下一个：<a href="/news/article-28658.htm">动物医院有宠物卖吗多少钱 动物医院有宠物卖吗多少钱一只</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-node-subscribe-links.htm" title="「9月3日」最高速度22.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「9月3日」最高速度22.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-high-speed-nodes.htm" title="「11月29日」最高速度19.8M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月29日」最高速度19.8M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-10-free-clash-stash.htm" title="「8月10日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「8月10日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-stash.htm" title="「11月10日」最高速度19.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月10日」最高速度19.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-clash-node-daily-updates.htm" title="「11月14日」最高速度23M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月14日」最高速度23M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-shadowrocket-node.htm" title="「12月4日」最高速度20.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月4日」最高速度20.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-stash-node.htm" title="「12月8日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月8日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-high-speed-nodes.htm" title="「12月6日」最高速度19.4M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月6日」最高速度19.4M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="「11月13日」最高速度18.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月13日」最高速度18.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-shadowrocket-node.htm" title="「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
