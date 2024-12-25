@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-31006.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>python 数据加载工作</title>
+        <meta name="description" content="&nbsp; &nbsp; &nbsp; &nbsp; 最近参加了datawhale的组队学习活动，在组队学习动员下，开始通过强迫自己输出来实现更好的输入与处理，6-15开始自己的第一次文章发布，我会" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">python 数据加载工作</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp; &nbsp; &nbsp; 最近参加了datawhale的组队学习活动，在组队学习动员下，开始通过强迫自己输出来实现更好的输入与处理，6-15开始自己的第一次文章发布，我会把自己这个真的很小白遇到的问题写出来，希望能给屏幕前小白的你带来帮助。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 工作中大量繁琐的自动化，把以前在学校摸过的python重新捡起来，不成体系的、拼图一样把需要的工作搭建起来，工作暂时是可用上了，每天节省了至少3个小时的数据处理工作，手里拿着python这个锤子，看什么都像钉子。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 首先，你要先学会安装软件，anaconda软件,安装成功后，你点击jupyter notebook打开代码框。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; 现在可以开始尝试做数据分析了。</p> <h2>1、数据加载</h2> <h3 id="1.1-载入数据">1.1 载入数据</h3> <p>数据集下载<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.kaggle.com/c/titanic/overview"  rel="nofollow">https://www.kaggle.com/c/titanic/overview</a></p> <p>1.1.1 导入包：导入numpy和pandas</p> <pre><code>import pandas as pd import numpy as np</code></pre> <p>&nbsp; &nbsp; &nbsp; &nbsp;如果出错了，需要注意大小写、有没有单词写错了</p> <p>1.1.2 载入数据</p> <p>(1) 使用相对路径载入数据<br /> (2) 使用绝对路径载入数据</p> <pre><code>df = pd.read_csv('train.csv') df.head(3)</code></pre> <pre><code>df = pd.read_csv('/Users/Documents/train.csv') df.head(3)</code></pre> <p>注意绝对路径的 “&nbsp; /&nbsp; ” 方向不要错。</p> <p>1.1.3 大文件时要分块读取：每1000行为一个数据模块，逐块读取</p> <pre><code>chunker = pd.read_csv('train.csv', chunksize=1000)</code></pre> <p>1.1.4 对着整个表修改列名：将表头改成中文，索引改为乘客ID ，要注意的是，要记得把名字跟列一一对上，数量对上、顺序对上</p> <p>PassengerId =&gt; 乘客ID<br /> Survived =&gt; 是否幸存<br /> Pclass =&gt; 乘客等级(1/2/3等舱位)<br /> Name =&gt; 乘客姓名<br /> Sex =&gt; 性别<br /> Age =&gt; 年龄<br /> SibSp =&gt; 堂兄弟/妹个数<br /> Parch =&gt; 父母与小孩个数<br /> Ticket =&gt; 船票信息<br /> Fare =&gt; 票价<br /> Cabin =&gt; 客舱<br /> Embarked =&gt; 登船港口</p> <pre><code>df = pd.read_csv('train.csv', names=['乘客ID','是否幸存','仓位等级','姓名','性别','年龄','兄弟姐妹个数','父母子女个数','船票信息','票价','客舱','登船港口'],index_col='乘客ID',header=0) df.head()</code></pre> <h3 id="1.2-初步观察">1.2 初步观察</h3> <p>导入数据后，我们可以对数据的整体结构和样例进行概览，比如说，数据大小、有多少列，各列都是什么格式的，是否包含null等。info 后面加（）跟不加（）会 有不同的内容。</p> <pre><code>print(df.info())</code></pre> <p>如想在python的查看数据，可以用head</p> <pre><code>df.head(10) df.tail(15)</code></pre> <p>判断数据是否为空，为空的地方返回True，其余地方返回False</p> <pre><code>df.isnull().head()</code></pre> <h3 id="1.3-保存数据">1.3 保存数据</h3> <p>1.3.1&nbsp; 在工作目录下保存为一个新文件train_chinese.csv，如不希望表格自带index，可以加入index=false</p> <pre><code>df.to_csv('train_chinese.csv',index=flase)</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30539.htm">下村给动物打疫苗的简报（下村给动物打疫苗的简报范文）</a></p>
+                                        <p>下一个：<a href="/news/article-31009.htm">动物疫苗价格表图片高清大图大全 动物疫苗价格表图片高清大图大全集</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-share-clash-stash.htm" title="「10月2日」最高速度18.5M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「10月2日」最高速度18.5M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-19-clash-node-daily-updates.htm" title="「9月19日」最高速度18M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「9月19日」最高速度18M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-20-free-subscribe-node.htm" title="「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-clash-node.htm" title="「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31006.htm" title="python 数据加载工作">python 数据加载工作</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-clash-stash.htm" title="「9月18日」最高速度20.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「9月18日」最高速度20.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-22-clash-node-daily-updates.htm" title="「8月22日」最高速度20.4M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「8月22日」最高速度20.4M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-share-clash-stash.htm" title="「8月9日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「8月9日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-clash-stash.htm" title="「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-19-share-clash-stash.htm" title="「7月19日」最高速度20.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「7月19日」最高速度20.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
