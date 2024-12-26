@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-31369.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法</title>
+        <meta name="description" content="1.重要内容分析： 如何把python的list列表中的数据放入sql语句的in后的语句中的办法：  idlists=dics["data"]["cameraIdList"]   #返回一个列表【“i" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1.重要内容分析：</p> <p>如何把python的list列表中的数据放入sql语句的in后的语句中的办法：</p> <blockquote> <pre>idlists=dics["data"]["cameraIdList"]   #返回一个列表【“id1”，“id2”，。。。】 # print(idlists) ids=tuple(idlists) idstrs=str(ids)   #变成sql中的字符查询   #这里是关键信息，重点查询数据信息，把python中的列表转换成字符，然后在sql中查询  #1. sqlselect = "select * from device WHERE id in {}".format(idstrs) sqlselect = "select * from device WHERE id in {}".format(ids) cursor = db.cursor()</pre> </blockquote> <pre><code>import requests import json import pymysql from openpyxl import load_workbook import openpyxl   # 下载内容的组织结构： # json # 	code # 	data # 		message # 		cameraIdList # 			j7bP32dsdssdsdsdsdqw # 			j7bwewerwewewerwewee  # //1.下载文件  #0.连接mysql数据库    """ 程序解决问题： 1.下载ppvm中指定用户下的包含哪些点位信息，例如，张三 这个用户下的有哪些点位信息 2.导出张三 账户下的点位信息到excel表格中。  难点：把这个列表‘idlists=dics["data"]["cameraIdList"] ’===&gt;先转换为元组格式，然后通过format放入sql语句中 放入sql语句的  sqlselect = "select * from evice WHERE id in {}".format(idstrs) 中， 此处使用了拼接字符串的方式解决， """ db = pymysql.connect(host='127.0.0.1', user='root',passwd= 'a123456', db='stryvmdb')  # 下载json文件信息 def calldoloadfile():     ip=input("请输入ppvm的地址：").strip()     id=input("请输入np_pvmdb数据库中对应的用户的id名称：").strip()     doloadfile(ip, id)  def doloadfile(ip,id):     url61 = "http://{}:31121/npconfig/api/v1/{}/camera/idList".format(ip,id)      res=requests.get(url61)       savefilename="{}.json".format(ip)     with open(savefilename,"wb") as f:   #这里关注wb写入的是二进制文件         f.write(res.content)  #2.读取需要的文件---》一个列表  def callreadfile():     jsonname=input("请输入要读取的json文件名称：")     # 判断下 如果没有写*。json后缀，自动加上后缀     if not jsonname.endswith(".json"):         jsonname="{}.json".format(jsonname)      xlsxname="{}.xlsx".format(jsonname)   #保存的excel文件名，跟输入的json文件同名      readfile(jsonname,xlsxname)   def readfile(jsonname,xlsxname):     # with open("61json.json","r") as fr:     with open(jsonname,"r") as fr:         dics=json.load(fr)          # print(dics)         # return dics         idlists=dics["data"]["cameraIdList"]   #返回一个列表【“id1”，“id2”，。。。】         # print(idlists)         ids=tuple(idlists)         idstrs=str(ids)   #变成sql中的字符查询           #这里是关键信息，重点查询数据信息，把python中的列表转换成字符，然后在sql中查询          # sqlselect = "select * from device WHERE id in {}".format(idstrs)         sqlselect = "select * from device WHERE id in {}".format(ids)         cursor = db.cursor()         cursor.execute(sqlselect)          wb = openpyxl.Workbook()         wbsheet = wb.create_sheet("结果")         print("数据写入文件中，请稍等....")         result=cursor.fetchall()         # print(result)         for rowdata in result:             wbsheet.append(rowdata)  #写入excel表格             # print(rowdata)          wb.save(xlsxname)  #保存的excel表格          cursor.close()  #关闭游标         db.close()   #关闭数据库         print("完成数据写入，请到软件目录下获取excel文件")   def calldownloadcity():     citycode = input("请输入你要下载的城市代码code：")      downloadCity(citycode)  # 下载每个地市的文件，采用sql语句+excel表格的方式 def downloadCity(citycode):      #这里字符串的解决一定要注意的     # sqlcity = "select * from deviceWHERE gb_id like %s%%"%(citycode)     sqlcity = "select * from deviceWHERE gb_id like '{}%%'".format(citycode)     print(sqlcity)     cursor = db.cursor()     cursor.execute(sqlcity)      wb = openpyxl.Workbook()     wbsheet = wb.create_sheet("结果")     print("数据写入文件中，请稍等....")     result = cursor.fetchall()     # print(result)     for rowdata in result:         wbsheet.append(rowdata)  # 写入excel表格         # print(rowdata)     xlsxname="{}.xlsx".format(citycode)     wb.save(xlsxname)  # 保存的excel表格      cursor.close()  # 关闭游标     db.close()  # 关闭数据库     print("完成数据写入，请到软件目录下获取excel文件")   def fludb():     pass      func_dic = {     '1':calldoloadfile,     '2':callreadfile,     '3':calldownloadcity,  }  if __name__ == '__main__':      while True:         print('''                          ===========功能列表===========             1.下载pvm导出的用户权限的json文件             2.读取数据并且生成excel表格             3.下载cc数据                  ==================              ''')         choice = input('请输入功能编号：').strip()         if choice not in func_dic:             print("输入正确的编号：")             continue          func_dic.get(choice)()         # print("本次录入数据条目是{}:条".format(jc))      </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31009.htm">动物疫苗价格表图片高清大图大全 动物疫苗价格表图片高清大图大全集</a></p>
+                                        <p>下一个：<a href="/news/article-31370.htm">【spring】详解@RequestMapping注解的基本属性以及使用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20334.htm" title="helm部署redis集群">helm部署redis集群</a></li>
+                        <li class="py-2"><a href="/news/article-30539.htm" title="下村给动物打疫苗的简报（下村给动物打疫苗的简报范文）">下村给动物打疫苗的简报（下村给动物打疫苗的简报范文）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-20-free-subscribe-node.htm" title="「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月20日」最高速度18.7M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21250.htm" title="clickhouse智能提示编辑器">clickhouse智能提示编辑器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-22-node-share.htm" title="「7月22日」最高速度23M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「7月22日」最高速度23M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-clash-windows.htm" title="「12月1日」最高速度21.3M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「12月1日」最高速度21.3M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-clash-stash.htm" title="「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-ssr-node.htm" title="「11月17日」最高速度20.6M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月17日」最高速度20.6M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-clash-subscribe.htm" title="「9月15日」最高速度22.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「9月15日」最高速度22.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-18-free-subscribe-node.htm" title="「8月18日」最高速度19.6M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「8月18日」最高速度19.6M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
