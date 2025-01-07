@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-37236.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spring_boot之自动加载自己的AutoConfiguration</title>
+        <meta name="description" content="如果项目中要开发一个比较通用的组件，这个组件要被其它springboot项目应用并且其它springboot项目在应用它时不想要加入新的标注和代码，只要在pom.xml里加入它的依赖就。这种情况下，怎" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">Spring_boot之自动加载自己的AutoConfiguration</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>如果项目中要开发一个比较通用的组件，这个组件要被其它springboot项目应用并且其它springboot项目在应用它时不想要加入新的标注和代码，只要在pom.xml里加入它的依赖就。这种情况下，怎么办呢</p> </h1> <h2>2.1. 组件spring_autoconfiguration</h2> <p>假如：我们组件名字时spring_autoconfiguration,在我们的组件里加入<strong>META-INF/spring.factories文件</strong></p> <p><img fetchpriority="high" decoding="async" alt="" height="403" src="http://img.555519.xyz/uploads3/20220829/8bf5d3a4cb29cfc97be2567f4c815503.jpg"></p> <p>&nbsp;创建这个组件的MyEnableAutoConfiguration</p> <pre><code class="language-java">@Configuration(proxyBeanMethods = false) public class MyEnableAutoConfiguration { 	 	static Logger logger = LoggerFactory.getLogger(MyEnableAutoConfiguration.class); 	 	public MyEnableAutoConfiguration() { 		logger.info("MyEnableAutoConfiguration is starting instantiating"); 	} 	 	@Bean 	public MyService myService() { 		return new MyService(); 	}  }</code></pre> <p>MyService</p> <pre><code class="language-java">public class MyService {  }</code></pre> <p>pom.xml</p> <pre><code class="language-XML">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt; 	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  	&lt;parent&gt; 		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; 		&lt;version&gt;2.6.2&lt;/version&gt; 		&lt;relativePath /&gt; 	&lt;/parent&gt;  	&lt;groupId&gt;com&lt;/groupId&gt; 	&lt;artifactId&gt;spring_autoconfiguration&lt;/artifactId&gt; 	&lt;version&gt;1-SNAPSHOT&lt;/version&gt; 	&lt;packaging&gt;jar&lt;/packaging&gt;  	&lt;dependencies&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; 		&lt;/dependency&gt; 	&lt;/dependencies&gt; &lt;/project&gt;</code></pre> <h2>2.2. 项目spring_boot_test</h2> <p>这个是springboot的项目，需要依赖组件spring_autoconfiguration，</p> <p>pom.xml</p> <pre><code class="language-XML">		&lt;dependency&gt; 				&lt;groupId&gt;com&lt;/groupId&gt; 				&lt;artifactId&gt;spring_autoconfiguration&lt;/artifactId&gt; 				&lt;version&gt;1-SNAPSHOT&lt;/version&gt; 		&lt;/dependency&gt;</code></pre> <p>spring boot 的启动类</p> <pre><code class="language-java">@SpringBootApplication public class App { 	 	static Logger logger = LoggerFactory.getLogger(App.class); 	     public static void main(String[] args) {     	ConfigurableApplicationContext context = SpringApplication.run( App.class, args );     	MyService myService = context.getBean(MyService.class);     	logger.info("myService is " + myService);     } }</code></pre> <p>执行代码</p> <pre><code class="language-java">2022-06-27 18:30:22.081  INFO 16168 --- [           main] com.harry.App                            : myService is com.harry.service.MyService@29a23c3d</code></pre> </h1> <p>&nbsp;在SpringBoot的启动类中，@SpringBootApplication注解的代码里面有一句@EnableAutoConfiguration</p> <p><img decoding="async" alt="" height="207" src="http://img.555519.xyz/uploads3/20220829/a1a14b50180fbe401d618cbda9205a66.jpg"></p> <blockquote> <p>&nbsp;@<strong>ComponentScan</strong>: 注解的作用是扫描@SpringBootApplication所在的Application类（即spring-boot项目的入口类）所在的包（basepackage）下所有的@component注解（或拓展了@component的注解）标记的bean，并注册到spring容器中。</p> <p>&nbsp; @<strong>EnableAutoConfiguration</strong>: 注解加载的是资源目录META-INF文件下的spring.factories的文件。包括导入到项目中的Jar包的META-INF文件夹下的spring.factories文件。spring.factories文件是一个properties文件。</p> </blockquote> <p>组件的项目中的spring.factories文件的内容如下。也就是说，其它项目在导入我的这个Jar的时候，会去加载MyEnableAutoConfiguration这个类。多个类用逗号隔开</p> <pre><code class="language-java">org.springframework.boot.autoconfigure.EnableAutoConfiguration=\ com.harry.autoconfiguration.MyEnableAutoConfiguration</code></pre> <p>如果你要改变某个AutoConfiugration的实例化的顺序，可以用下面的标注</p> <p>@AutoConfigureAfter(value = {ConfigurationB.class})</p> <p>或</p> <p>@AutoConfigureBefore(value = {ConfigurationB.class})</p> <p>例子代码</p> <pre><code class="language-java">@Configuration @AutoConfigureAfter(value = {ConfigurationB.class}) public class ConfigurationA { 	 	public ConfigurationA() { 		System.out.println("ConfigurationA.."); 	} }</code></pre> <pre><code class="language-java">@Configuration public class ConfigurationB { 	public ConfigurationB() { 		System.out.println("ConfigurationB.."); 	}  }</code></pre> <p>在spring.factories文件里配置ConfigurationA和ConfigurationB</p> <pre><code>org.springframework.boot.autoconfigure.EnableAutoConfiguration=\ com.harry.configuration.ConfigurationA,\com.harry.configuration.ConfigurationB</code></pre> <p>执行结果</p> <pre><code>ConfigurationB.. ConfigurationA..</code></pre> <p>如果去掉@AutoConfigureAfter(value = {ConfigurationB.class})标注</p> <pre><code class="language-java">@Configuration //@AutoConfigureAfter(value = {ConfigurationB.class}) public class ConfigurationA { 	 	public ConfigurationA() { 		System.out.println("ConfigurationA.."); 	} }</code></pre> <p>执行结果</p> <pre><code class="language-java">ConfigurationA.. ConfigurationB..</code></pre> <p><span style="color:#fe2c24;"><strong>注意</strong></span></p> <p><span style="color:#fe2c24;"><strong>如果没在</strong></span><span style="color:#fe2c24;"><strong>spring.factories文件里配置的Configuration类不被视为AutoConfiguration.也就是说，配有@Configuration类如果没有在spring.factories配置的话，加@AutoConfigureAfter或@AutoConfigureBefore不能改变其实例化顺序。</strong></span></p> <p><span style="color:#fe2c24;"><strong>比如去掉</strong></span><span style="color:#fe2c24;"><strong>spring.factories的配置</strong></span></p> <pre><code>#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\ #com.harry.configuration.ConfigurationA,\com.harry.configuration.ConfigurationB</code></pre> <p>执行结果</p> <pre><code>ConfigurationA.. ConfigurationB..</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36743.htm">猫咪三针疫苗间隔时间（猫咪三针疫苗间隔多久）</a></p>
+                                        <p>下一个：<a href="/news/article-37237.htm">黑枸杞的作用与功效,多吃有哪些好处和坏处(黑枸杞的作用与功效,多吃有哪些好处呢)</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-clash-stash.htm" title="「11月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31369.htm" title="python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法">python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法</a></li>
+                        <li class="py-2"><a href="/news/article-24001.htm" title="厦门宠物收容中心有哪些 厦门宠物收容中心有哪些地方">厦门宠物收容中心有哪些 厦门宠物收容中心有哪些地方</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-high-speed-nodes.htm" title="「11月5日」最高速度19.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月5日」最高速度19.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25869.htm" title="宠物用品批发零售店（宠物用品批发零售店赚钱吗）">宠物用品批发零售店（宠物用品批发零售店赚钱吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-clash-stash.htm" title="「11月23日」最高速度19M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「11月23日」最高速度19M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-clash-subscribe.htm" title="「11月11日」最高速度21.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月11日」最高速度21.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34986.htm" title="动物疫苗价格表图片及价格大全图解（动物疫苗价格表图片及价格大全图解视频）">动物疫苗价格表图片及价格大全图解（动物疫苗价格表图片及价格大全图解视频）</a></li>
+                        <li class="py-2"><a href="/news/article-29859.htm" title="十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新">十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新</a></li>
+                        <li class="py-2"><a href="/news/article-29115.htm" title="聊城宠物用品厂招聘（聊城开发区宠物食品公司招聘）">聊城宠物用品厂招聘（聊城开发区宠物食品公司招聘）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
