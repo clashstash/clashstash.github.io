@@ -2,23 +2,23 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://clashstash.github.io/news/article-43158.htm" />
+        <link rel="canonical" href="https://clashstash.github.io/news/article-43654.htm" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>动态修改springboot中的scheduling(动态修改定时任务执行时间)</title>
-        <meta name="description" content="package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletReques" />
+    <title>Java 实现选择排序</title>
+        <meta name="description" content="public static void selection(int[] a) {         for (int i = 0; i &lt; a.length - 1; i++) {         " />
         <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
 
     <meta name="author" content="ClashStash官方节点站">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://clashstash.github.io/news/article-43158.htm" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-43654.htm" />
     <meta property="og:site_name" content="ClashStash官方节点站" />
-    <meta property="og:title" content="动态修改springboot中的scheduling(动态修改定时任务执行时间)" />
-    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/e6f388fda01734d13a820bf8b9d4ed89.webp" />
-        <meta property="og:release_date" content="2025-01-19T07:11:09" />
-    <meta property="og:updated_time" content="2025-01-19T07:11:09" />
-        <meta property="og:description" content="package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletReques" />
+    <meta property="og:title" content="Java 实现选择排序" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/9a59164aa14fa2ff70e4ee3d5cf7db5d.webp" />
+        <meta property="og:release_date" content="2025-01-20T07:12:59" />
+    <meta property="og:updated_time" content="2025-01-20T07:12:59" />
+        <meta property="og:description" content="public static void selection(int[] a) {         for (int i = 0; i &lt; a.length - 1; i++) {         " />
         
     <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
@@ -81,7 +81,7 @@
                                 <li class="breadcrumb-item active">正文</li>
                             </ul>
                         </nav>
-                        <h1 class="text-center">动态修改springboot中的scheduling(动态修改定时任务执行时间)</h1>
+                        <h1 class="text-center">Java 实现选择排序</h1>
                     </div>
                 </div>
             </div>
@@ -92,10 +92,10 @@
             <div class="row">
                 <div class="col-md-9">
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
-                  				  				  				<div id="content_views" class="htmledit_views"> <pre><code>package org.springblade.timing;   import java.util.Date; import javax.servlet.http.HttpServletRequest; import org.springframework.context.annotation.Lazy; import org.springframework.scheduling.Trigger; import org.springframework.scheduling.TriggerContext; import org.springframework.scheduling.annotation.EnableScheduling; import org.springframework.scheduling.annotation.SchedulingConfigurer; import org.springframework.scheduling.config.ScheduledTaskRegistrar; import org.springframework.scheduling.support.CronTrigger; import org.springframework.stereotype.Component; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping;  @Lazy(value=false) @Component @EnableScheduling @Controller public class DynamicCronTask implements SchedulingConfigurer {  	public static String cron = "0/10 * * * * ?";  	@RequestMapping("/setDynamicCronTask") 	public String setSpringDynamicCronTask(HttpServletRequest request, String setCron) { 		System.out.println("cron setDynamicCronTaskto:" + setCron); 		cron = setCron; 		System.err.println("cron change to:" + cron); 		return ""; 	} 	@Override 	public void configureTasks(ScheduledTaskRegistrar taskRegister) { 		taskRegister.addTriggerTask(new Runnable() { 			@Override 			public void run() { 				// 逻辑任务  				System.out.println("dynamicCronTask is running..."+taskRegister.getCronTaskList().size()); 			} 		}, new Trigger() { 			@Override 			public Date nextExecutionTime(TriggerContext triggerContext) { 				// 任务触发，可修改任务的执行周期 				CronTrigger trigger = new CronTrigger(cron); 				System.out.println("cron:" + cron); 				Date nextExecutor = trigger.nextExecutionTime(triggerContext); 				return nextExecutor; 			} 		}); 	} } </code></pre> <p>模拟请求：</p> <p>http://localhost:9998/setDynamicCronTask?setCron=0/1 * * * * ?&nbsp;</p> <p>运行结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="417" src="http://img.555519.xyz/uploads/20230108/d6d063e5efcfe4a5bb09fa591024c176.jpg"></p> </p></div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <pre><code>public static void selection(int[] a) {         for (int i = 0; i &lt; a.length - 1; i++) {             // i 代表每轮选择最小元素要交换到的目标索引             int s = i; // s 代表最小元素的索引             for (int j = s + 1; j &lt; a.length; j++) {                 if (a<span class="show-more" title="文字折叠"><span><i class="be be-squareplus"></i>展开</span></span> &gt; a[j]) {                     s = j;                 }             }             if (s != i) {                 swap(a, s, i);             }         }     }</code></pre> </h1> <ul> <li>1，将数组分为两个子集，排序的和未排序的，每一轮从未排序的子集中选出最小的元素，放入排序子集。</li> <li>2，重复以上步骤，直到整个数组有序。</li> </ul> <h2><a id="_21" rel="nofollow"></a>优化思路</h2> <ul> <li>为了减少交换次数，每一轮可以先找最小的索引，在每轮最后才交换元素。</li> </ul> </h1> <ul> <li>1，二者平均时间复杂度都是O(n^2)。</li> <li>2，选择排序一般要快于冒泡，因为其交换次数少。</li> <li>3，如果集合有序度高，则冒泡优于选择。</li> <li>4，冒泡属于稳定排序算法，而选择属于不稳定排序算法。（ps:不稳定算法指多次排序会打乱相同元素原本的顺序）</li> </ul> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-43157.htm">PHP对象继承</a></p>
-                                        <p>下一个：<a href="/news/article-43654.htm">Java 实现选择排序</a></p>
+                                        <p>上一个：<a href="/news/article-43158.htm">动态修改springboot中的scheduling(动态修改定时任务执行时间)</a></p>
+                                        <p>下一个：<a href="/news/article-43655.htm">宠物粮食专卖店电话多少 宠物粮食专卖店电话多少号</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -105,16 +105,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-43158.htm" title="动态修改springboot中的scheduling(动态修改定时任务执行时间)">动态修改springboot中的scheduling(动态修改定时任务执行时间)</a></li>
-                        <li class="py-2"><a href="/news/article-25401.htm" title="厦门有没有宠物领养中心（厦门宠物救助领养中心地址）">厦门有没有宠物领养中心（厦门宠物救助领养中心地址）</a></li>
-                        <li class="py-2"><a href="/news/article-29115.htm" title="聊城宠物用品厂招聘（聊城开发区宠物食品公司招聘）">聊城宠物用品厂招聘（聊城开发区宠物食品公司招聘）</a></li>
-                        <li class="py-2"><a href="/news/article-39215.htm" title="上海宠物领养救助站（流浪宠物收养中心）">上海宠物领养救助站（流浪宠物收养中心）</a></li>
-                        <li class="py-2"><a href="/news/article-24225.htm" title="动物疫苗生产车间 动物疫苗生产车间工作怎么样">动物疫苗生产车间 动物疫苗生产车间工作怎么样</a></li>
-                        <li class="py-2"><a href="/news/article-40184.htm" title="私下手写的协议书有效吗（私人手写协议有效吗）">私下手写的协议书有效吗（私人手写协议有效吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-4-free-node-subscribe.htm" title="「11月4日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月4日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19422.htm" title="动物医院好评模板图片大全高清（给动物医院的美团好评）">动物医院好评模板图片大全高清（给动物医院的美团好评）</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-10-11-clash-node-daily-updates.htm" title="「10月11日」最高速度21.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月11日」最高速度21.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-24-clash-stash.htm" title="「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29568.htm" title="成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）">成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）</a></li>
+                        <li class="py-2"><a href="/news/article-38196.htm" title="宠物领养怎么赚钱快（宠物领养怎么赚钱快点）">宠物领养怎么赚钱快（宠物领养怎么赚钱快点）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-stash-node.htm" title="「12月8日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月8日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-linux-clash-stash.htm" title="「12月3日」最高速度20.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月3日」最高速度20.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32913.htm" title="动物疫苗对人体有害吗（动物疫苗有没有毒）">动物疫苗对人体有害吗（动物疫苗有没有毒）</a></li>
+                        <li class="py-2"><a href="/news/article-21679.htm" title="打过疫苗的猫抓破了一点皮需要打狂犬疫苗吗（打过疫苗的猫抓出血后需不需要***）">打过疫苗的猫抓破了一点皮需要打狂犬疫苗吗（打过疫苗的猫抓出血后需不需要***）</a></li>
+                        <li class="py-2"><a href="/news/article-27724.htm" title="Missing URI template variable">Missing URI template variable</a></li>
+                        <li class="py-2"><a href="/news/article-19873.htm" title="猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）">猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-shadowrocket-node.htm" title="「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
