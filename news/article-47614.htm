@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-47614.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>python初始化方法</title>
+        <meta name="description" content="python可以用__init__函数进行初始化，子类中可以使用super函数和__init__进行初始化 #encoding:utf-8 class Person(object):     def " />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-47614.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="python初始化方法" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/adc839bd1d2be238d9ce140c578c791d.webp" />
+        <meta property="og:release_date" content="2025-01-28T09:34:27" />
+    <meta property="og:updated_time" content="2025-01-28T09:34:27" />
+        <meta property="og:description" content="python可以用__init__函数进行初始化，子类中可以使用super函数和__init__进行初始化 #encoding:utf-8 class Person(object):     def " />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python初始化方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">python初始化方法</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>python可以用__init__函数进行初始化，子类中可以使用super函数和__init__进行初始化</p> <pre><code class="prism language-python"><span class="token comment">#encoding:utf-8</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span><span class="token punctuation">:</span>         self<span class="token punctuation">.</span>name <span class="token operator">=</span> name         self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex  <span class="token keyword">class</span> <span class="token class-name">Child</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>                          <span class="token comment"># Child 继承 Person</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>mother<span class="token punctuation">,</span>father<span class="token punctuation">)</span><span class="token punctuation">:</span>         Person<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>        <span class="token comment"># 子类对父类的构造方法的调用</span>         self<span class="token punctuation">.</span>mother <span class="token operator">=</span> mother         self<span class="token punctuation">.</span>father <span class="token operator">=</span> father   <span class="token keyword">class</span> <span class="token class-name">Child_chg</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>                          <span class="token comment"># Child 继承 Person</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>mother<span class="token punctuation">,</span>father<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># Person.__init__(self,name,sex)        # 子类对父类的构造方法的调用</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>Child_chg<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mother <span class="token operator">=</span> mother         self<span class="token punctuation">.</span>father <span class="token operator">=</span> father   <span class="token comment"># class Child_chg(Person):                          # Child 继承 Person</span> <span class="token comment">#     def __init__(self,name,sex,mother,father):</span> <span class="token comment">#         # Person.__init__(self,name,sex)        # 子类对父类的构造方法的调用</span> <span class="token comment">#         super(Child_chg, self).__init__()</span> <span class="token comment">#         self.mother = mother</span> <span class="token comment">#         self.father = father</span>    May <span class="token operator">=</span> Child<span class="token punctuation">(</span><span class="token string">"May"</span><span class="token punctuation">,</span><span class="token string">"female"</span><span class="token punctuation">,</span><span class="token string">"April"</span><span class="token punctuation">,</span><span class="token string">"June"</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>May<span class="token punctuation">.</span>name<span class="token punctuation">,</span>May<span class="token punctuation">.</span>sex<span class="token punctuation">,</span>May<span class="token punctuation">.</span>mother<span class="token punctuation">,</span>May<span class="token punctuation">.</span>father<span class="token punctuation">)</span>  May_chg <span class="token operator">=</span> Child_chg<span class="token punctuation">(</span><span class="token string">"May"</span><span class="token punctuation">,</span><span class="token string">"female"</span><span class="token punctuation">,</span><span class="token string">"April"</span><span class="token punctuation">,</span><span class="token string">"June"</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>May_chg<span class="token punctuation">.</span>mother<span class="token punctuation">,</span>May_chg<span class="token punctuation">.</span>father<span class="token punctuation">)</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47131.htm">springboot整合Dubbo与Feign的实现 (无注册中心)_java</a></p>
+                                        <p>下一个：<a href="/news/article-47615.htm">我所在的城市有一家动物医院英文作文怎么写（我所在的城市有一家动物医院英文改为一船疑问句）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-share-clash-stash.htm" title="「12月5日」最高速度18.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月5日」最高速度18.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26335.htm" title="猫的疫苗三针隔多久打第二针疫苗（猫打疫苗三针间隔时间）">猫的疫苗三针隔多久打第二针疫苗（猫打疫苗三针间隔时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-stash-node.htm" title="「10月8日」最高速度19.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「10月8日」最高速度19.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23536.htm" title="vue简单实现骨架屏">vue简单实现骨架屏</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-clash-stash-node.htm" title="「11月18日」最高速度20.3M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「11月18日」最高速度20.3M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27728.htm" title="开个小型宠物食品加工厂前景怎么样啊 开个小型宠物食品加工厂前景怎么样啊">开个小型宠物食品加工厂前景怎么样啊 开个小型宠物食品加工厂前景怎么样啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-node-share.htm" title="「1月27日」最高速度21.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「1月27日」最高速度21.8M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-subscribe-node.htm" title="「12月2日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「12月2日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26804.htm" title="被猫爪子勾了一下出了一点血会死吗会感染吗（被猫爪子勾了一下出了一点血需要打疫苗吗）">被猫爪子勾了一下出了一点血会死吗会感染吗（被猫爪子勾了一下出了一点血需要打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/news/article-40687.htm" title="专科动物医学可以考公务员吗（专科有动物医学）">专科动物医学可以考公务员吗（专科有动物医学）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
