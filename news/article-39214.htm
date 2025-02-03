@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashstash.github.io/news/article-39214.htm" />
@@ -9,9 +9,36 @@
     <title>Vue中引入静态资源的几种方式</title>
         <meta name="description" content="最近修改一些老项目，好多组件里面引入图片的方式不太一样，总感觉自己没有好好总结过，今天有时间参考了几篇帖子，就总结一下； 在总结之前看了一下vue-cli的文档，突然感觉之前可能是我忽略它了基本没有看" />
         <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-39214.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="Vue中引入静态资源的几种方式" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/082cdc9b20dd43ccb58ae5b2b7e8e5f4.webp" />
+        <meta property="og:release_date" content="2025-01-11T10:04:42" />
+    <meta property="og:updated_time" content="2025-01-11T10:04:42" />
+        <meta property="og:description" content="最近修改一些老项目，好多组件里面引入图片的方式不太一样，总感觉自己没有好好总结过，今天有时间参考了几篇帖子，就总结一下； 在总结之前看了一下vue-cli的文档，突然感觉之前可能是我忽略它了基本没有看" />
+        
     <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue中引入静态资源的几种方式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
 <script>
@@ -94,16 +121,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-25400.htm" title="Docker知识点问题总结">Docker知识点问题总结</a></li>
-                        <li class="py-2"><a href="/news/article-31009.htm" title="动物疫苗价格表图片高清大图大全 动物疫苗价格表图片高清大图大全集">动物疫苗价格表图片高清大图大全 动物疫苗价格表图片高清大图大全集</a></li>
-                        <li class="py-2"><a href="/news/article-22170.htm" title="PowerBI开发：用自然语言来探索数据&#8211;Q&amp;A">PowerBI开发：用自然语言来探索数据&#8211;Q&amp;A</a></li>
-                        <li class="py-2"><a href="/news/article-27264.htm" title="动物医院仪器设备清单 动物医院仪器设备清单以及价格">动物医院仪器设备清单 动物医院仪器设备清单以及价格</a></li>
-                        <li class="py-2"><a href="/news/article-29568.htm" title="成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）">成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-16-clash-node-daily-updates.htm" title="「12月16日」最高速度20.7M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「12月16日」最高速度20.7M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-38708.htm" title="动物疫苗审批流程表 动物疫苗审批流程表格">动物疫苗审批流程表 动物疫苗审批流程表格</a></li>
-                        <li class="py-2"><a href="/news/article-24001.htm" title="厦门宠物收容中心有哪些 厦门宠物收容中心有哪些地方">厦门宠物收容中心有哪些 厦门宠物收容中心有哪些地方</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-27-clash-stash-node.htm" title="「10月27日」最高速度18.6M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「10月27日」最高速度18.6M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-clash-node.htm" title="「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-node-share-links.htm" title="「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28658.htm" title="动物医院有宠物卖吗多少钱 动物医院有宠物卖吗多少钱一只">动物医院有宠物卖吗多少钱 动物医院有宠物卖吗多少钱一只</a></li>
+                        <li class="py-2"><a href="/news/article-36742.htm" title="宠物食品加工厂要投资多少亿 宠物食品加工厂要投资多少亿元">宠物食品加工厂要投资多少亿 宠物食品加工厂要投资多少亿元</a></li>
+                        <li class="py-2"><a href="/news/article-32915.htm" title="动物疫苗打到人身上有事吗会传染吗视频（动物疫苗不小心扎到人身上会怎么样）">动物疫苗打到人身上有事吗会传染吗视频（动物疫苗不小心扎到人身上会怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-37690.htm" title="宠物粮食在哪里进货好卖（宠物粮食批发进货渠道）">宠物粮食在哪里进货好卖（宠物粮食批发进货渠道）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-stash-node.htm" title="「11月25日」最高速度18.4M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「11月25日」最高速度18.4M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40184.htm" title="私下手写的协议书有效吗（私人手写协议有效吗）">私下手写的协议书有效吗（私人手写协议有效吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-node-share-links.htm" title="「1月26日」最高速度21.6M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「1月26日」最高速度21.6M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23084.htm" title="猫粮加工机器图片（猫粮加工厂需要什么设备）">猫粮加工机器图片（猫粮加工厂需要什么设备）</a></li>
+                        <li class="py-2"><a href="/news/article-45645.htm" title="24小时宠物医院咨询电话临平（临平宠物店）">24小时宠物医院咨询电话临平（临平宠物店）</a></li>
                     </ul>
     </div>
 </div>
@@ -115,16 +142,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -134,7 +161,7 @@
             </div>
         </div> <!-- .container -->
     </div> <!-- .page-section -->
-        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
         <div class="container">
             <p class="text-center" id="copyright">
                             <p>

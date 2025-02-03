@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashstash.github.io/news/article-35488.htm" />
@@ -9,9 +9,36 @@
     <title>ASP.NET Core中的Ocelot网关介绍_实用技巧</title>
         <meta name="description" content="目录  1.简介 2.Ocelot配置  2.1基础集成（Basic Implementation） 2.2集成IdentityServer（With IdentityServer） 2.3多个网关实" />
         <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-35488.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="ASP.NET Core中的Ocelot网关介绍_实用技巧" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/e6c5d436361ce233a45205e562f96497.webp" />
+        <meta property="og:release_date" content="2025-01-04T10:23:46" />
+    <meta property="og:updated_time" content="2025-01-04T10:23:46" />
+        <meta property="og:description" content="目录  1.简介 2.Ocelot配置  2.1基础集成（Basic Implementation） 2.2集成IdentityServer（With IdentityServer） 2.3多个网关实" />
+        
     <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ASP.NET Core中的Ocelot网关介绍_实用技巧">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
 <script>
@@ -94,16 +121,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-share-clash-stash.htm" title="「12月5日」最高速度18.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月5日」最高速度18.7M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-29858.htm" title="FreeRTOS实时操作系统队列基础_操作系统">FreeRTOS实时操作系统队列基础_操作系统</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-shadowrocket-node.htm" title="「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月16日」最高速度22.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-clash-windows.htm" title="「10月14日」最高速度18.4M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月14日」最高速度18.4M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-clash-node.htm" title="「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月10日」最高速度19.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20334.htm" title="helm部署redis集群">helm部署redis集群</a></li>
-                        <li class="py-2"><a href="/news/article-33446.htm" title="塞尔达传说海拉鲁大陆地图（塞尔达传说海拉鲁大陆地图怎么先显示）">塞尔达传说海拉鲁大陆地图（塞尔达传说海拉鲁大陆地图怎么先显示）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-stash.htm" title="「10月18日」最高速度20.5M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月18日」最高速度20.5M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-29859.htm" title="十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新">十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-high-speed-nodes.htm" title="「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-clash-stash.htm" title="「11月22日」最高速度22.3M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「11月22日」最高速度22.3M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45644.htm" title="SpringBoot如何整合spring-retry来实现接口请求重试">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
+                        <li class="py-2"><a href="/news/article-32437.htm" title="微信上买狗被欺骗怎么办 微信上买狗被欺骗怎么办2400元">微信上买狗被欺骗怎么办 微信上买狗被欺骗怎么办2400元</a></li>
+                        <li class="py-2"><a href="/news/article-37690.htm" title="宠物粮食在哪里进货好卖（宠物粮食批发进货渠道）">宠物粮食在哪里进货好卖（宠物粮食批发进货渠道）</a></li>
+                        <li class="py-2"><a href="/news/article-45645.htm" title="24小时宠物医院咨询电话临平（临平宠物店）">24小时宠物医院咨询电话临平（临平宠物店）</a></li>
+                        <li class="py-2"><a href="/news/article-35488.htm" title="ASP.NET Core中的Ocelot网关介绍_实用技巧">ASP.NET Core中的Ocelot网关介绍_实用技巧</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-high-speed-nodes.htm" title="「11月29日」最高速度19.8M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月29日」最高速度19.8M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="「1月2日」最高速度19M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「1月2日」最高速度19M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24932.htm" title="青浦二中本科率2019（青浦二中本科录取率2019）">青浦二中本科率2019（青浦二中本科录取率2019）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-high-speed-nodes.htm" title="「1月1日」最高速度20.8M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「1月1日」最高速度20.8M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -115,16 +142,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -134,7 +161,7 @@
             </div>
         </div> <!-- .container -->
     </div> <!-- .page-section -->
-        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
         <div class="container">
             <p class="text-center" id="copyright">
                             <p>

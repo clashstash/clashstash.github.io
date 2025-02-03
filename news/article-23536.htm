@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashstash.github.io/news/article-23536.htm" />
@@ -9,9 +9,36 @@
     <title>vue简单实现骨架屏</title>
         <meta name="description" content="vue实现页面加载占位 效果如下  思路与实现   页面加载时用户等待，此时与用户交互的方式通常有等待层、进度条、加载动画等；本次介绍加载占位，把页面即将展示的样子用css背景展示出来，等数据返回后即" />
         <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-23536.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="vue简单实现骨架屏" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/adc839bd1d2be238d9ce140c578c791d.webp" />
+        <meta property="og:release_date" content="2024-12-09T10:27:58" />
+    <meta property="og:updated_time" content="2024-12-09T10:27:58" />
+        <meta property="og:description" content="vue实现页面加载占位 效果如下  思路与实现   页面加载时用户等待，此时与用户交互的方式通常有等待层、进度条、加载动画等；本次介绍加载占位，把页面即将展示的样子用css背景展示出来，等数据返回后即" />
+        
     <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue简单实现骨架屏">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
 <script>
@@ -94,16 +121,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node.htm" title="「11月7日」最高速度21.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「11月7日」最高速度21.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-node-subscribe.htm" title="「12月12日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月12日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-node-subscribe.htm" title="「12月31日」最高速度19.7M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月31日」最高速度19.7M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-31-free-shadowrocket-node.htm" title="「7月31日」最高速度22.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「7月31日」最高速度22.3M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-node-subscribe.htm" title="「12月13日」最高速度19.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月13日」最高速度19.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-10-free-clash-stash.htm" title="「8月10日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「8月10日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-29-clash-stash.htm" title="「8月29日」最高速度21.3M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「8月29日」最高速度21.3M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-25868.htm" title="Spring注解开发_Spring容器创建概述_在线工具">Spring注解开发_Spring容器创建概述_在线工具</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-22-clash-node-daily-updates.htm" title="「8月22日」最高速度20.4M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「8月22日」最高速度20.4M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-stash-node.htm" title="「10月8日」最高速度19.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「10月8日」最高速度19.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34347.htm" title="泉州领养猫（泉州领养猫咪）">泉州领养猫（泉州领养猫咪）</a></li>
+                        <li class="py-2"><a href="/news/article-41171.htm" title="开宠物店预算多少钱（开宠物店大概需要多少投资）">开宠物店预算多少钱（开宠物店大概需要多少投资）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-stash-node.htm" title="「1月17日」最高速度22.2M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「1月17日」最高速度22.2M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43654.htm" title="Java 实现选择排序">Java 实现选择排序</a></li>
+                        <li class="py-2"><a href="/news/article-31370.htm" title="【spring】详解@RequestMapping注解的基本属性以及使用">【spring】详解@RequestMapping注解的基本属性以及使用</a></li>
+                        <li class="py-2"><a href="/news/article-26804.htm" title="被猫爪子勾了一下出了一点血会死吗会感染吗（被猫爪子勾了一下出了一点血需要打疫苗吗）">被猫爪子勾了一下出了一点血会死吗会感染吗（被猫爪子勾了一下出了一点血需要打疫苗吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-node-share-links.htm" title="「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25400.htm" title="Docker知识点问题总结">Docker知识点问题总结</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-clash-windows.htm" title="「12月1日」最高速度21.3M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「12月1日」最高速度21.3M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36743.htm" title="猫咪三针疫苗间隔时间（猫咪三针疫苗间隔多久）">猫咪三针疫苗间隔时间（猫咪三针疫苗间隔多久）</a></li>
                     </ul>
     </div>
 </div>
@@ -115,25 +142,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -143,7 +161,7 @@
             </div>
         </div> <!-- .container -->
     </div> <!-- .page-section -->
-        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
         <div class="container">
             <p class="text-center" id="copyright">
                             <p>

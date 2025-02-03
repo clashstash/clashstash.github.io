@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://clashstash.github.io/news/article-23082.htm" />
@@ -9,9 +9,36 @@
     <title>基于.NetCore开发博客项目 StarBlog模型设计</title>
         <meta name="description" content="前言 上一篇文章介绍（水）了新建项目的操作，本文开始终于进入正题要开始写代码了！ 对了，上一篇文章有朋友留言问管理端的用户名和密码是多少，这个是我疏忽了，没有做一个便捷的项目初始化功能，目前登录管理端" />
         <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-23082.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="基于.NetCore开发博客项目 StarBlog模型设计" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/622bf16bbc3722be8a9d33db41a11ed0.webp" />
+        <meta property="og:release_date" content="2024-12-08T07:15:19" />
+    <meta property="og:updated_time" content="2024-12-08T07:15:19" />
+        <meta property="og:description" content="前言 上一篇文章介绍（水）了新建项目的操作，本文开始终于进入正题要开始写代码了！ 对了，上一篇文章有朋友留言问管理端的用户名和密码是多少，这个是我疏忽了，没有做一个便捷的项目初始化功能，目前登录管理端" />
+        
     <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="基于.NetCore开发博客项目 StarBlog模型设计">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
 <script>
@@ -94,16 +121,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-5-free-subscribe-node.htm" title="「10月5日」最高速度22.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「10月5日」最高速度22.8M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-high-speed-nodes.htm" title="「9月23日」最高速度18M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「9月23日」最高速度18M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-18-free-clash-subscribe.htm" title="「7月18日」最高速度21.4M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「7月18日」最高速度21.4M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47615.htm" title="我所在的城市有一家动物医院英文作文怎么写（我所在的城市有一家动物医院英文改为一船疑问句）">我所在的城市有一家动物医院英文作文怎么写（我所在的城市有一家动物医院英文改为一船疑问句）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-stash-node.htm" title="「1月4日」最高速度20.1M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「1月4日」最高速度20.1M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22626.htm" title="济南宠物领养中心在哪个位置好（济南宠物领养中心在哪个位置好一点）">济南宠物领养中心在哪个位置好（济南宠物领养中心在哪个位置好一点）</a></li>
+                        <li class="py-2"><a href="/news/article-31957.htm" title="宠物猫防疫针多少钱一针（猫防疫针价格）">宠物猫防疫针多少钱一针（猫防疫针价格）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-shadowrocket-node.htm" title="「1月5日」最高速度19.7M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「1月5日」最高速度19.7M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-node.htm" title="「11月19日」最高速度19.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月19日」最高速度19.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-23536.htm" title="vue简单实现骨架屏">vue简单实现骨架屏</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-13-free-high-speed-nodes.htm" title="「9月13日」最高速度21.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「9月13日」最高速度21.6M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-clash-subscribe.htm" title="「9月15日」最高速度22.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「9月15日」最高速度22.2M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-13-clash-v2ray-ss-ssr.htm" title="「7月13日」最高速度18.2M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「7月13日」最高速度18.2M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-14-linux-clash-stash.htm" title="「8月14日」最高速度22.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「8月14日」最高速度22.5M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-node-subscribe.htm" title="「10月22日」最高速度18.8M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月22日」最高速度18.8M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-14-node-share-links.htm" title="「7月14日」最高速度19.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月14日」最高速度19.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21678.htm" title="smdms超市订单管理系统之登录功能">smdms超市订单管理系统之登录功能</a></li>
+                        <li class="py-2"><a href="/news/article-43654.htm" title="Java 实现选择排序">Java 实现选择排序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-clash-stash.htm" title="「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月24日」最高速度18.6M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -115,25 +142,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -143,7 +161,7 @@
             </div>
         </div> <!-- .container -->
     </div> <!-- .page-section -->
-        <footer class="page-footer bg-image" style="background-image: url(__ADDON__/img/clashstash/world_pattern.svg);">
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
         <div class="container">
             <p class="text-center" id="copyright">
                             <p>
