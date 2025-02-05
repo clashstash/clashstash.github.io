@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-51145.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java数据结构-栈的实现</title>
+        <meta name="description" content="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;嘻嘻,今天博主终于要更新栈的知识了,上次结束说要更新要是上一次,所以这次咱就把栈的实现的更新带来了,嗯~ o(*￣▽￣*)o小伙伴可" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-51145.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="Java数据结构-栈的实现" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/a0e2a6179c324583b350db8f177667a2.webp" />
+        <meta property="og:release_date" content="2025-02-04T00:30:57" />
+    <meta property="og:updated_time" content="2025-02-04T00:30:57" />
+        <meta property="og:description" content="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;嘻嘻,今天博主终于要更新栈的知识了,上次结束说要更新要是上一次,所以这次咱就把栈的实现的更新带来了,嗯~ o(*￣▽￣*)o小伙伴可" />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java数据结构-栈的实现">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">Java数据结构-栈的实现</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <blockquote> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;嘻嘻,今天博主终于要更新栈的知识了,上次结束说要更新要是上一次,所以这次咱就把栈的实现的更新带来了,嗯~ o(*￣▽￣*)o小伙伴可能会问,栈能干什么啊,在Java中栈不是有对应的类吗....</p> <p class="img-center"> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>栈能够实现逆波兰计算机,中缀表达式转后缀表达式,还有普通中缀计算机等.....</strong></p> <p class="img-center"> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;话不多说,我们就从一下几个方面开始吧</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#511b78;"><em><strong> 栈的概念 ???? 栈的实现思路&nbsp;???? 栈的代码实现与分析&nbsp;???? 结论&nbsp;</strong></em></span></p> <p><span style="color:#511b78;"><em><strong>&nbsp; &nbsp; &nbsp; &nbsp; </strong></em></span><span style="color:#38d8f0;"><em><strong>如果喜欢作者的话</strong></em></span><span style="color:#511b78;"><em><strong>,<a class="link-info" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/JOElib?spm=1000.2115.3001.5343"  title="戳这" rel="nofollow">戳这</a></strong></em></span></p> <p><span style="color:#511b78;"><em><strong>&nbsp; &nbsp; &nbsp; &nbsp; </strong></em></span><span style="color:#fe2c24;"><em><strong>往期精彩:</strong></em></span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <a class="link-info" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/JOElib/article/details/123560844?spm=1001.2014.3001.5501"  title="普通队列与环形队列" rel="nofollow">普通队列与环形队列</a></p> </blockquote> <hr/> </h1> <ol> <li>&nbsp;栈是一个<span style="color:#fe2c24;"><strong>先进后出,后进先出</strong></span>的有序列表</li> <li>&nbsp;在栈中添加元素和删除元素都在一端执行,是一个特殊的线性表</li> <li>&nbsp;插入元素或删除元素的一端是活跃的一端,被称为栈顶</li> <li>&nbsp;另一端不活跃,被称为栈底</li> <li>&nbsp;常用术语:压栈=入栈=push 出栈=弹栈=pop</li> </ol> <hr/> </h1> <ul> <li>&nbsp;我们需要创建一个数组去模拟栈</li> <li>&nbsp;定义一个栈顶变量top,用于指向栈顶</li> <li>&nbsp;定义压栈弹栈等方法</li> </ul> <hr/> </h1> <ul> <li> <h3>创建一个数组及其变量模拟栈&nbsp;</h3> </li> </ul> <pre><code class="language-java">    private int maxSize;     private int top;     private Object[] stack;      public ArraysStack(int maxSize) {         this.maxSize = maxSize;         this.top = -1;         stack = new Object[maxSize];     }</code></pre> <p>&nbsp;<strong>代码分析:</strong></p> <ul> <li>&nbsp;<strong>maxSize是栈的最大容量,</strong>在调用构造方法的时候可以自行指定</li> <li> <strong>&nbsp;top用于指向栈顶的变量</strong>,应该被初始化为-1</li> <li>&nbsp;这里选用了Object[]数组,<strong>目的是什么都可以放进去</strong> </li> </ul> <p><strong>图解:&nbsp;</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230205/ca990a8cc8cca5987562c26b941319e9.jpg">&nbsp;</p> <ul> <li> <h3>&nbsp;<strong>创造两个方法,分别判断是否已满或已空</strong><br /> </h3> </li> </ul> <pre><code class="language-java">public boolean isFull() {         return top == maxSize - 1;     } public boolean isEmpty() {         return top == -1;     }</code></pre> <p>&nbsp;<strong>代码分析:</strong>&nbsp;</p> <p><strong>图解:&nbsp;</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230205/b59718de67d20e8c50bd6dcab556a304.jpg"></p> <ul> <li> <h3>&nbsp;创建一个压栈和弹栈的方法</h3> </li> </ul> <pre><code class="language-java">public void push(E element) {         if(isFull()) {             System.out.println("栈已满,无法压栈");             return;         }         stack[++top] = element;     } public E pop() throws Exception{         if(isEmpty()) {             throw new Exception("栈已空,无法弹栈");         }         return (E)stack[top--];     }</code></pre> <p>&nbsp;&nbsp;<strong>代码分析:</strong>&nbsp;</p> <ul> <li>加入元素和取出元素之前,要分别分析一下栈是否为空,或是否为满,要有<strong>校验意识</strong> </li> <li>因为<strong>top初始化为-1</strong>,所以添加元素的时候应该<strong>先要自增,再添加</strong> </li> <li>因为<strong>top指向栈顶元素</strong>,所以取出元素时,<strong>先取出,栈顶top变量再自减&nbsp;</strong> </li> </ul> <p>&nbsp;<strong>图解:&nbsp;</strong></p> <p style="text-align:center;">&nbsp;<img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230205/bc64675d8ea29760b5c73a50126e22b9.jpg"></p> <ul> <li> <h3>&nbsp;创建一个遍历的方法</h3> </li> </ul> <pre><code class="language-java">public void print() {         if(isEmpty()){             System.out.println("栈已空,无法输出");             return;         }         for (int i = top; i &gt;= 0; i--) {             System.out.println("stack[" + i + "] = " + stack[i]);         }     }</code></pre> <p>&nbsp;&nbsp;&nbsp;<strong>代码分析:</strong>&nbsp;</p> <ol> <li>从栈的定义得知,先<strong>拿出来的是栈顶元素</strong>,所以应该从top开始,到0结束&nbsp;&nbsp;</li> </ol> <h3>&nbsp;完整代码:</h3> <pre><code class="language-java">package datastructure.chapter02.stack.instance;  /**  *  * @param &lt;E&gt; 指定栈存储的元素  */ public class ArraysStack&lt;E&gt; {     private int maxSize;     private int top;     private Object[] stack;      /**      * 栈(数组实现)的构造方法      * @param maxSize 栈空间的最大值      */     public ArraysStack(int maxSize) {         this.maxSize = maxSize;         this.top = -1;         stack = new Object[maxSize];     }      /**      *  判断栈是否为满      * @return 若返回值为true,则栈已满,否则为false      */     public boolean isFull() {         return top == maxSize - 1;     }      /**      *  判断栈是否为空      * @return 若返回值为true,则栈已空,否则为false      */     public boolean isEmpty() {         return top == -1;     }      /**      * @param element 压入栈的数据      */     public void push(E element) {         if(isFull()) {             System.out.println("栈已满,无法压栈");             return;         }         stack[++top] = element;     }      /**      *      * @return 返回栈顶数据      * @throws Exception 空栈异常      */     public E pop() throws Exception{         if(isEmpty()) {             throw new Exception("栈已空,无法弹栈");         }         return (E)stack[top--];     }      /**      * 输出栈      */     public void print() {         if(isEmpty()){             System.out.println("栈已空,无法输出");             return;         }         for (int i = top; i &gt;= 0; i--) {             System.out.println("stack[" + i + "] = " + stack[i]);         }     } } </code></pre> </h1> <blockquote> <p>&nbsp; &nbsp; &nbsp; &nbsp; 栈的知识点简单又重要,代码不多,理解起来也不难,我来总结一下重要的几点:</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; <strong>栈顶top的初始化赋值</strong></p> <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; 栈的压栈和弹栈的方法</strong></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; ????下一站:双向链表!!!</p> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-50648.htm">Spring Cloud Config 配置中心(用途、使用、加解密)</a></p>
+                                        <p>下一个：<a href="/news/article-51146.htm">流浪狗领养平台（流浪狗领养平台电话）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-clash-stash-node.htm" title="「12月28日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「12月28日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48457.htm" title="纯手工宠物零食怎么做（diy宠物零食）">纯手工宠物零食怎么做（diy宠物零食）</a></li>
+                        <li class="py-2"><a href="/news/article-22626.htm" title="济南宠物领养中心在哪个位置好（济南宠物领养中心在哪个位置好一点）">济南宠物领养中心在哪个位置好（济南宠物领养中心在哪个位置好一点）</a></li>
+                        <li class="py-2"><a href="/news/article-42664.htm" title="合肥宠物狗领养公司（合肥狗狗领养）">合肥宠物狗领养公司（合肥狗狗领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-node-share-links.htm" title="「1月26日」最高速度21.6M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「1月26日」最高速度21.6M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29568.htm" title="成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）">成都宠物领养中心有哪些公司招聘（成都宠物领养中心有哪些公司招聘信息）</a></li>
+                        <li class="py-2"><a href="/news/article-41173.htm" title="武汉便宜的宠物医院（武汉不坑人的宠物医院）">武汉便宜的宠物医院（武汉不坑人的宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-50136.htm" title="Blazor 发布WebAssembly使用Brotli 压缩提升初次加载速度">Blazor 发布WebAssembly使用Brotli 压缩提升初次加载速度</a></li>
+                        <li class="py-2"><a href="/news/article-25869.htm" title="宠物用品批发零售店（宠物用品批发零售店赚钱吗）">宠物用品批发零售店（宠物用品批发零售店赚钱吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-subscribe-node.htm" title="「11月12日」最高速度18.6M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「11月12日」最高速度18.6M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
