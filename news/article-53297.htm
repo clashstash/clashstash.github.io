@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-53297.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.23 实例：正则表达式验证IP地址</title>
+        <meta name="description" content="IP 地址是网络上每台计算机的唯一标识，因此 IP 地址的错误输入将使程序无法运行。下面使用前面学习的正则表达式知识，编写一个 Java 程序来验证 IP 地址是否合法。 在定义正则表达式之前，首先要" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-53297.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="1.23 实例：正则表达式验证IP地址" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/229bc2517268e380e35bfd972bbb9a9c.webp" />
+        <meta property="og:release_date" content="2025-02-08T04:41:36" />
+    <meta property="og:updated_time" content="2025-02-08T04:41:36" />
+        <meta property="og:description" content="IP 地址是网络上每台计算机的唯一标识，因此 IP 地址的错误输入将使程序无法运行。下面使用前面学习的正则表达式知识，编写一个 Java 程序来验证 IP 地址是否合法。 在定义正则表达式之前，首先要" />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="1.23 实例：正则表达式验证IP地址">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">1.23 实例：正则表达式验证IP地址</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <p>IP 地址是网络上每台计算机的唯一标识，因此 IP 地址的错误输入将使程序无法运行。下面使用前面学习的正则表达式知识，编写一个 Java 程序来验证 IP 地址是否合法。</p> <p>在定义正则表达式之前，首先要知道一个正确 IP 地址的格式及组成部分。IP 地址由 4 字节构成，每字节的值为 0~255，各字节通过一个句点分隔。因此，IP 地址中的每字节有至少一个，至多三个数字。</p> <p>下面是为 IP 地址编写的正则表达式：</p> <blockquote> <p>\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}</p> </blockquote> <p>以上正则表达式对 IP 做简单的匹配，不完全和 IP 的规则一致。如果想完全匹配，读者可以重新修改匹配的正则表达式。</p> <p>创建 Test 类，在该类的 main() 方法中编写验证 IP 地址的代码。代码如下：</p> <pre><code class="prism language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span>Matcher<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span>Pattern<span class="token punctuation">;</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         String regex <span class="token operator">=</span> <span class="token string">"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"</span><span class="token punctuation">;</span>         String answer <span class="token operator">=</span> <span class="token string">"Y"</span><span class="token punctuation">;</span>         <span class="token keyword">do</span> <span class="token punctuation">{<!-- --></span>             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请输入 IP 地址："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             Scanner scan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>             String phone <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 接收用户在控制台输入的电话号码</span>             Pattern pattern <span class="token operator">=</span> Pattern<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 编译正则表达式</span>             Matcher matcher <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">matcher</span><span class="token punctuation">(</span>phone<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 创建给定输入模式的匹配器</span>             <span class="token keyword">boolean</span> bool <span class="token operator">=</span> matcher<span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token keyword">if</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>   <span class="token comment">// 如果验证通过</span>                 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输入的 IP 地址正确。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{<!-- --></span>                 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输入的IP地址格式错误。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span>             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"是否继续输入？（Y/N 或者 y/n)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             answer <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span><span class="token keyword">while</span><span class="token punctuation">(</span>answer<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"Y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"程序结束。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>运行程序，然后输入不同格式的 IP 地址，输出结果如下所示：</p> <pre><code class="prism language-java">请输入 IP 地址：<span class="token number">11.154</span><span class="token number">.15</span><span class="token number">.1</span> 输入的 IP 地址正确。 是否继续输入？（Y<span class="token operator">/</span>N 或者 y<span class="token operator">/</span>n<span class="token punctuation">)</span>y 请输入 IP 地址：<span class="token number">22</span>a<span class="token punctuation">.</span><span class="token number">7.68</span><span class="token number">.9</span> 输入的IP地址格式错误。 是否继续输入？（Y<span class="token operator">/</span>N 或者 y<span class="token operator">/</span>n<span class="token punctuation">)</span>n 程序结束。 </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-52760.htm">kafka3.0.0启动异常</a></p>
+                                        <p>下一个：<a href="/news/article-53299.htm">幼猫一定要跟人睡不然就一直叫是为什么（幼猫为啥想跟着人睡觉）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35488.htm" title="ASP.NET Core中的Ocelot网关介绍_实用技巧">ASP.NET Core中的Ocelot网关介绍_实用技巧</a></li>
+                        <li class="py-2"><a href="/news/article-43157.htm" title="PHP对象继承">PHP对象继承</a></li>
+                        <li class="py-2"><a href="/news/article-38708.htm" title="动物疫苗审批流程表 动物疫苗审批流程表格">动物疫苗审批流程表 动物疫苗审批流程表格</a></li>
+                        <li class="py-2"><a href="/news/article-20792.htm" title="领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用">领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-ssr-node.htm" title="「11月24日」最高速度18M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月24日」最高速度18M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-subscribe-node.htm" title="「2月3日」最高速度22.2M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「2月3日」最高速度22.2M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26336.htm" title="聊城宠物市场在哪（聊城宠物狗市场）">聊城宠物市场在哪（聊城宠物狗市场）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-linux-clash-stash.htm" title="「2月1日」最高速度23M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「2月1日」最高速度23M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-clash-windows.htm" title="「1月20日」最高速度19.6M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「1月20日」最高速度19.6M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38711.htm" title="央视推荐过的国产猫粮品牌排行榜（卫视猫粮）">央视推荐过的国产猫粮品牌排行榜（卫视猫粮）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

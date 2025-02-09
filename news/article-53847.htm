@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-53847.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编码练习：JavaScript 点击下拉列表显示相关信息</title>
+        <meta name="description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-53847.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="编码练习：JavaScript 点击下拉列表显示相关信息" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/58e9d6a8707e0037bf454573c6da992d.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:06:00" />
+    <meta property="og:updated_time" content="2025-02-09T10:06:00" />
+        <meta property="og:description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="编码练习：JavaScript 点击下拉列表显示相关信息">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">编码练习：JavaScript 点击下拉列表显示相关信息</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>问题描述</h2> <p>点击下拉列表中的选项，加载选项对应的列表信息。</p> <p>给定HTML：</p> <pre><code class="language-html">&lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1&gt;A few of the Game of Thrones characters&lt;/h1&gt; 	&lt;form&gt;   &lt;label for="house"&gt;House&lt;/label&gt;:   &lt;select name="house" id="house"&gt;       &lt;option value="" selected&gt;Select a house&lt;/option&gt;   &lt;/select&gt; 	&lt;/form&gt;    &lt;ul id="characters"&gt;&lt;/ul&gt;   &lt;/body&gt; &lt;/html&gt;</code></pre> <p>显示结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="210" src="http://img.555519.xyz/uploads/20230207/4802385e8ad905bb8ea4af942448b176.jpg"></p> <h2>&nbsp;解决方法</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我的：</p> <pre><code class="language-javascript">// Write your code here const houseElement = document.createElement("option"); houseElement.textContent = "Lannister"; houseElement.id = "Lannister"; houseElement.value="Lannister"; document.getElementById("house").appendChild(houseElement); document.getElementById("house").addEventListener("change",e=&gt;{     const ui1=document.createElement("li");     ui1.textContent="Tywin";        const ui2=document.createElement("li");     ui2.textContent="Cersei";     const ui3=document.createElement("li");     ui3.textContent="Jaime";     let ui4=document.createElement("li");     ui4.textContent="Tyrion";      if(e.target.value === "Lannister")     {         document.getElementById("characters").appendChild(ui1);         document.getElementById("characters").appendChild(ui2);         document.getElementById("characters").appendChild(ui3);         document.getElementById("characters").appendChild(ui4);     } });</code></pre> <p>显示效果：</p> <p><img decoding="async" alt="" height="205" src="http://img.555519.xyz/uploads/20230207/28f4bc72f420bf2e74c765cd4a0adc6d.jpg"></p> <p>&nbsp;选中这个选项会加载下面的选项</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 参考答案：</p> <pre><code class="language-javascript">/* Game of Thrones characters */  // Character list. Each house has a name and a code const houses = [   {     code: "ST",     name: "Stark"   },   {     code: "LA",     name: "Lannister"   },   {     code: "BA",     name: "Baratheon"   },   {     code: "TA",     name: "Targaryen"   } ];  // Return an array of characters belonging to a house const getCharacters = houseCode =&gt; {   switch (houseCode) {     case "ST":       return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];     case "LA":       return ["Tywin", "Cersei", "Jaime", "Tyrion"];     case "BA":       return ["Robert", "Stannis", "Renly"];     case "TA":       return ["Aerys", "Daenerys", "Viserys"];     default:       return []; // Empty array   } };  // Create and return an HTML &lt;option&gt; tag const createOptionElement = (text, value) =&gt; {   const element = document.createElement("option");   element.textContent = text;   element.value = value;   return element; };  // Create and return and HTML &lt;li&gt; tag const createLiElement = text =&gt; {   const element = document.createElement("li");   element.textContent = text;   return element; };  const houseElement = document.querySelector("select");  // Fill the house list houses.forEach(house =&gt; {   houseElement.appendChild(createOptionElement(house.name, house.code)); });  // Handle house change event houseElement.addEventListener("change", e =&gt; {   // The value of the event target is the house code   const characters = getCharacters(e.target.value);   const characterElement = document.getElementById("characters");   // Empty the list   characterElement.innerHTML = "";   // Add each character to the list   characters.forEach(character =&gt; {     characterElement.appendChild(createLiElement(character));   }); });</code></pre> <p>效果：</p> <p><img decoding="async" alt="" height="197" src="http://img.555519.xyz/uploads/20230207/9bbc57e06d720987f36ad40eda7407fd.jpg"></p> <p>&nbsp;<img loading="lazy" decoding="async" alt="" height="239" src="http://img.555519.xyz/uploads/20230207/1f165fe0d215d298314014a9af838089.jpg"></p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53299.htm">幼猫一定要跟人睡不然就一直叫是为什么（幼猫为啥想跟着人睡觉）</a></p>
+                                        <p>下一个：<a href="/news/article-53849.htm">全国动物疫苗生产厂家排名前十名 全国动物疫苗生产厂家排名前十名有哪些</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38195.htm" title="三国杀限定技能（三国杀限定技能大全）">三国杀限定技能（三国杀限定技能大全）</a></li>
+                        <li class="py-2"><a href="/news/article-28658.htm" title="动物医院有宠物卖吗多少钱 动物医院有宠物卖吗多少钱一只">动物医院有宠物卖吗多少钱 动物医院有宠物卖吗多少钱一只</a></li>
+                        <li class="py-2"><a href="/news/article-27264.htm" title="动物医院仪器设备清单 动物医院仪器设备清单以及价格">动物医院仪器设备清单 动物医院仪器设备清单以及价格</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-node-share-links.htm" title="「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「1月30日」最高速度21.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-clash-subscribe.htm" title="「2月7日」最高速度18.1M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「2月7日」最高速度18.1M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-high-speed-nodes.htm" title="「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-shadowrocket-node.htm" title="「12月4日」最高速度20.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月4日」最高速度20.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22625.htm" title="中国宠物用品生产基地在哪里有（宠物用品厂家哪个城市最多）">中国宠物用品生产基地在哪里有（宠物用品厂家哪个城市最多）</a></li>
+                        <li class="py-2"><a href="/news/article-47131.htm" title="springboot整合Dubbo与Feign的实现 (无注册中心)_java">springboot整合Dubbo与Feign的实现 (无注册中心)_java</a></li>
+                        <li class="py-2"><a href="/news/article-31370.htm" title="【spring】详解@RequestMapping注解的基本属性以及使用">【spring】详解@RequestMapping注解的基本属性以及使用</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
