@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-62980.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多层感知机实现</title>
+        <meta name="description" content="前面利用了softmax来对图像进行分类，也可以使用多层感知机的方法对图像进行分类。 多层感知机从零开始实现方法   多层感知机（  multilayer perceptron  ，  MLP），在单" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-62980.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="多层感知机实现" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/622bf16bbc3722be8a9d33db41a11ed0.webp" />
+        <meta property="og:release_date" content="2025-02-25T05:01:25" />
+    <meta property="og:updated_time" content="2025-02-25T05:01:25" />
+        <meta property="og:description" content="前面利用了softmax来对图像进行分类，也可以使用多层感知机的方法对图像进行分类。 多层感知机从零开始实现方法   多层感知机（  multilayer perceptron  ，  MLP），在单" />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="多层感知机实现">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">多层感知机实现</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>前面利用了softmax来对图像进行分类，也可以使用多层感知机的方法对图像进行分类。</p> <h2>多层感知机从零开始实现方法</h2> <div>  <span style="color:#333333;">多层感知机（</span><br />  <span style="color:#333333;">multilayer perceptron</span><br />  <span style="color:#333333;">，</span><br />  <span style="color:#333333;">MLP），在单层神经网络的基础上引入了一到多个隐藏层（hidden layer）。</span> </div> <div>  &nbsp; </div> <div>  <img fetchpriority="high" decoding="async" alt="" class="has" height="291" src="http://img.555519.xyz/uploads/20230119/db5359c93b00af5beb1b924cfa0d4502.jpg"> </div> <div>  &nbsp; </div> <div>  对于图中的感知机来说，<br />  <span style="color:#333333;">它含有一个隐藏层，该层中有</span><br />  <span style="color:#333333;">5个隐藏单元。输入和输出个数分别为</span><br />  <span style="color:#333333;">4</span><br />  <span style="color:#333333;">和</span><br />  <span style="color:#333333;">3</span><br />  <span style="color:#333333;">，中间的隐藏层中包含了</span><br />  <span style="color:#333333;">5个隐藏单元。由于输入层不涉及计算，图</span><br />  <span style="color:#333333;">中的多层感知机的层数为</span><br />  <span style="color:#333333;">2</span><br />  <span style="color:#333333;">。 </span> </div> <div>  <span style="color:#333333;">隐藏层位于输入层和输出层之间。</span><br />  <span style="color:#333333;">隐藏层中</span><br />  <span style="color:#333333;">的神经元和输入层中各个输入完全连接，输出层中的神经元和隐藏层中的各个神经元也完全连接。因</span><br />  <span style="color:#333333;">此，多层感知机中的隐藏层和输出层都是全连接层。</span> </div> <div>  &nbsp; </div> <h3>1.导入包</h3> <pre class="has"><code class="language-python">import torch import numpy as np import sys sys.path.append("..") # 为了导入上层目录的d2lzh_pytorch import d2lzh_pytorch as d2l  print(torch.__version__)</code></pre> <h3>2.获取和读取数据</h3> <div>  <span style="color:#333333;">使用</span><br />  <span style="color:#333333;">Fashion-MNIST</span><br />  <span style="color:#333333;">数据集。我们将使用多层感知机对图像进行分类。 </span> </div> <pre class="has"><code class="language-python">batch_size = 256 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)</code></pre> <h3>3.定义模型参数</h3> <div>  <span style="color:#333333;">Fashion-MNIST</span><br />  <span style="color:#333333;">数据集中图像形状为 28x28，类别数为10</span><br />  <span style="color:#333333;">。本节中我们依然使用长度为 28x28=784的向量表示每一张图像。因此，输入个数为784</span><br />  <span style="color:#333333;">，输出个数为</span><br />  <span style="color:#333333;">10</span><br />  <span style="color:#333333;">。实验中，我们设超参数隐藏单元个数为</span><br />  <span style="color:#333333;">256</span><br />  <span style="color:#333333;">。 </span> </div> <pre class="has"><code class="language-python">num_inputs, num_outputs, num_hiddens = 784, 10, 256  W1 = torch.tensor(np.random.normal(0, 0.01, (num_inputs, num_hiddens)), dtype=torch.float) b1 = torch.zeros(num_hiddens, dtype=torch.float) W2 = torch.tensor(np.random.normal(0, 0.01, (num_hiddens, num_outputs)), dtype=torch.float) b2 = torch.zeros(num_outputs, dtype=torch.float)  params = [W1, b1, W2, b2] for param in params:     param.requires_grad_(requires_grad=True)</code></pre> <h3>4.定义激活函数</h3> <div>  <span style="color:#333333;">使用基础的 </span><br />  <span style="color:#333333;">max </span><br />  <span style="color:#333333;">函数来实现</span><br />  <span style="color:#333333;">ReLU</span><br />  <span style="color:#333333;">，而非直接调用 </span><br />  <span style="color:#333333;">relu </span><br />  <span style="color:#333333;">函数。 </span> </div> <pre class="has"><code class="language-python">def relu(X):     return torch.max(input=X, other=torch.tensor(0.0))</code></pre> <h3>5.定义模型</h3> <div>  <span style="color:#333333;">通过 </span><br />  <span style="color:#333333;">view </span><br />  <span style="color:#333333;">函数将每张原始图像改成长度为 </span><br />  <span style="color:#333333;">num_inputs </span><br />  <span style="color:#333333;">的向量。然后我们实现上一节中多层感知机的计算表达式。 </span> </div> <pre class="has"><code class="language-python">def net(X):     X = X.view((-1, num_inputs))     H = relu(torch.matmul(X, W1) + b1)     return torch.matmul(H, W2) + b2</code></pre> <h3>6.定义损失函数</h3> <div>  <span style="color:#333333;">直接使用</span><br />  <span style="color:#333333;">PyTorch</span><br />  <span style="color:#333333;">提供的包括</span><br />  <span style="color:#333333;">softmax运算和交叉熵损失计算的函数。 </span> </div> <pre class="has"><code class="language-python">loss = torch.nn.CrossEntropyLoss()</code></pre> <h3>7.训练模型</h3> <pre class="has"><code class="language-python">num_epochs, lr = 5, 100.0 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params, lr)</code></pre> <p><img decoding="async" alt="" class="has" height="105" src="http://img.555519.xyz/uploads/20230119/99c32180a6cada77646c3ad78dae6a11.jpg"></p> <h2>简洁实现的方法：</h2> <h3>1.定义模型</h3> <pre class="has"><code class="language-python">num_inputs, num_outputs, num_hiddens = 784, 10, 256      net = nn.Sequential(         d2l.FlattenLayer(),         nn.Linear(num_inputs, num_hiddens),         nn.ReLU(),         nn.Linear(num_hiddens, num_outputs),          )      for params in net.parameters():     init.normal_(params, mean=0, std=0.01)</code></pre> <h3>2.读取数据并训练模型</h3> <pre class="has"><code class="language-python">batch_size = 256 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size) loss = torch.nn.CrossEntropyLoss()  optimizer = torch.optim.SGD(net.parameters(), lr=0.5)  num_epochs = 5 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)</code></pre> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62385.htm">动物诊疗许可证办理流程视频（动物诊疗许可证申请条件）</a></p>
+                                        <p>下一个：<a href="/news/article-62981.htm">三国杀展示动态皮肤（三国杀动态皮肤获得）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-clash-subscribe.htm" title="「1月21日」最高速度18.5M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「1月21日」最高速度18.5M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18744.htm" title="宠物粮食市场前景如何呢 宠物粮食市场前景如何呢知乎">宠物粮食市场前景如何呢 宠物粮食市场前景如何呢知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-clash-windows.htm" title="「2月20日」最高速度21.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「2月20日」最高速度21.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-clash-node.htm" title="「1月19日」最高速度21.8M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「1月19日」最高速度21.8M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-high-speed-nodes.htm" title="「12月22日」最高速度20.7M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「12月22日」最高速度20.7M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-free-shadowrocket-node.htm" title="「1月29日」最高速度22.2M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「1月29日」最高速度22.2M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54396.htm" title="布偶难养（布偶难养在哪）">布偶难养（布偶难养在哪）</a></li>
+                        <li class="py-2"><a href="/news/article-51145.htm" title="Java数据结构-栈的实现">Java数据结构-栈的实现</a></li>
+                        <li class="py-2"><a href="/news/article-53847.htm" title="编码练习：JavaScript 点击下拉列表显示相关信息">编码练习：JavaScript 点击下拉列表显示相关信息</a></li>
+                        <li class="py-2"><a href="/news/article-40184.htm" title="私下手写的协议书有效吗（私人手写协议有效吗）">私下手写的协议书有效吗（私人手写协议有效吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
