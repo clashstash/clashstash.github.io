@@ -74,15 +74,12 @@
                             <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
                         </li>
                                                 <li class="nav-item">
-                            <a class="nav-link" href="/news/">新闻资讯</a>
+                            <a class="nav-link" href="/client.htm">客户端</a>
                         </li>
                                                 <li class="nav-item">
-                            <a class="nav-link" href="#">关于</a>
+                            <a class="nav-link" href="/news/">新闻资讯</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">联系</a>
-                        </li>
-                    </ul>
+                                            </ul>
                 </div>
             </div>
         </nav>
@@ -110,7 +107,6 @@
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>介绍<br /> uniapp自定义弹窗组件uniPop，基于uni-app开发的自定义模态弹窗|msg信息框|alert对话框|confirm确认框|toast弱提示框</p> <p>支持多种动画效果、多弹窗类型ios/android、可以自定义弹窗样式/自定义多按钮及事件/弹窗显示位置、自动关闭秒数、遮罩层透明度及点击遮罩是否关闭</p> <p>H5/小程序/App三端效果如下，亲测多端效果兼容性一致。(后续大图均展示App端)</p> <p>用法<br /> ◆ 弹窗uniPop.vue组件两种引入方式</p> <p>1、在main.js里引入全局组件</p> <pre><code>import uniPop from './components/uniPop/uniPop.vue'  Vue.component('uni-pop', uniPop)</code></pre> <p>2、在相应页面引入组件</p> <p>复制代码</p> <pre><code>import uniPop from './components/uniPop/uniPop.vue' export default {     data() {         return {             ...         }     },     components:{         uniPop     },     ... }</code></pre> <pre><code>&lt;template&gt;     &lt;view class="container"&gt;         ...                  &lt;!-- 弹窗模板 --&gt;         &lt;uni-pop ref="uniPop"&gt;&lt;/uni-pop&gt;     &lt;/view&gt; &lt;/template&gt;</code></pre> <p>msg信息框效果</p> <pre><code>this.$refs.uniPop.show({     content: 'msg消息提示框（5s后窗口关闭）',     shade: true,     shadeClose: false,     time: 5,     anim: 'fadeIn', })</code></pre> <pre><code>this.$refs.uniPop.show({     skin: 'toast',     content: 'loading',     icon: 'loading', //success | info | error | loading     shade: false,     time: 3 })</code></pre> <pre><code>let uniPop = this.$refs.uniPop uniPop.show({     skin: 'ios',     title: '开启新邮件提醒',     content: '为了保证新邮件能及时收到提醒，请前往系统 [设置] - [电池] 中关闭应用锁屏清理。',     shadeClose: false,          btns: [         {             text: '取消',             style: 'color: #2a83f2',             onTap() {                 uniPop.close();             }         },         {             text: '前往设置',             style: 'color: #2a83f2',             onTap() {                 console.log('您点击了前往设置！');             }         }     ] })</code></pre> <p>调用方式如上，只是传入参数不一样，下面就不一 一展示了</p> <p>◆ uniapp自定义模板template</p> <pre><code> /**   * @tpl        uni-app自定义弹窗组件 - uniPop.vue   * @author     andy by 2019-09-20   * @about      Q：282310962  wx：xy190310   */  &lt;template&gt;     &lt;view v-if="opts.isVisible" class="uniPop" :class="opts.isCloseCls"&gt;         &lt;view class="unipop__ui_panel"&gt;             &lt;view v-if="opts.shade" class="unipop__ui_mask" @tap="shadeTaped"&gt;&lt;/view&gt;             &lt;view class="unipop__ui_main"&gt;                 &lt;view class="unipop__ui_child" :style="opts.style"&gt;                     &lt;!-- 标题 --&gt;                     &lt;view v-if="opts.title" class="unipop__ui_tit"&gt;{<!-- -->{opts.title}}&lt;/view&gt;                     &lt;!-- 内容 --&gt;                     &lt;view v-if="opts.content" class="unipop__ui_cnt" :style="opts.contentStyle"&gt;                         {<!-- -->{opts.content}}                     &lt;/view&gt;                     &lt;view v-if="opts.btns" class="unipop__ui_btns"&gt;                         &lt;text v-for="(item,index) in opts.btns" :key="index" class="btn" :style="item.style" @tap="btnTaped(item)"&gt;{<!-- -->{item.text}}&lt;/text&gt;                     &lt;/view&gt;                 &lt;/view&gt;                 &lt;!-- xclose --&gt;                 &lt;view v-if="opts.xclose" class="unipop__xclose" @tap="close"&gt;&lt;/view&gt;             &lt;/view&gt;         &lt;/view&gt;     &lt;/view&gt; &lt;/template&gt;</code></pre> <p>◆ 默认参数配置</p> <pre><code>data() {     return {         defaultOptions: {             isVisible: false,       //是否显示弹窗                          title: '',              //标题             content: '',            //内容             contentStyle: '',       //内容样式             style: null,            //自定义弹窗样式             skin: '',               //弹窗风格             icon: '',               //弹窗图标             xclose: false,          //自定义关闭按钮                          shade: true,            //遮罩层             shadeClose: true,       //点击遮罩关闭             opacity: '',            //遮罩透明度             time: 0,                //自动关闭秒数             end: null,              //销毁弹窗回调函数                          anim: 'scaleIn',        //弹窗动画  scaleIn(默认) | fadeIn | shake | top | right | bottom | left             position: '',           //弹窗位置  top | right | bottom | left                          btns: null,             //弹窗按钮         },         opts: {},         timer: null     } },</code></pre> <p>◆ 通过Object.assign函数进行参数合并处理</p> <pre><code>methods: {     // 显示弹窗事件（处理传参）     show(args) {         this.opts = Object.assign({}, this.defaultOptions, args, {isVisible: true})         // console.log(this.opts)                  // 自动关闭         if(this.opts.time) {             this.timer = setTimeout(() =&gt; {                 this.close()             }, this.opts.time * 1000)         }     },     ... }</code></pre> <p>好了，uni-app自定义弹窗组件介绍就到这里，希望能喜欢????????~~</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-20337.htm">自家宠物猫轻微抓伤有一点渗血怎么办（自家猫咪抓了一点点血）</a></p>
                                         <p>下一个：<a href="/news/article-20792.htm">领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用</a></p>
                                     </div>
                                 </div>
@@ -121,16 +117,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-45644.htm" title="SpringBoot如何整合spring-retry来实现接口请求重试">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
-                        <li class="py-2"><a href="/news/article-40685.htm" title="宠物粮从哪里进货便宜又好卖呢视频（宠物粮批发进货渠道）">宠物粮从哪里进货便宜又好卖呢视频（宠物粮批发进货渠道）</a></li>
-                        <li class="py-2"><a href="/news/article-49611.htm" title="家庭式宠物寄养平台（家庭式宠物寄养平台朝阳区）">家庭式宠物寄养平台（家庭式宠物寄养平台朝阳区）</a></li>
-                        <li class="py-2"><a href="/news/article-23082.htm" title="基于.NetCore开发博客项目 StarBlog模型设计">基于.NetCore开发博客项目 StarBlog模型设计</a></li>
-                        <li class="py-2"><a href="/news/article-42168.htm" title="全国动物疫苗生产厂家排名前十名 全国动物疫苗生产厂家排名前十名有哪些">全国动物疫苗生产厂家排名前十名 全国动物疫苗生产厂家排名前十名有哪些</a></li>
-                        <li class="py-2"><a href="/news/article-29859.htm" title="十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新">十大动物疫苗公司排名榜单 十大动物疫苗公司排名榜单最新</a></li>
-                        <li class="py-2"><a href="/news/article-31957.htm" title="宠物猫防疫针多少钱一针（猫防疫针价格）">宠物猫防疫针多少钱一针（猫防疫针价格）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-22-node-share.htm" title="「1月22日」最高速度22.7M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「1月22日」最高速度22.7M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20791.htm" title="uniapp自定义弹窗组件">uniapp自定义弹窗组件</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-free-high-speed-nodes.htm" title="「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月21日」最高速度21.1M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47131.htm" title="springboot整合Dubbo与Feign的实现 (无注册中心)_java">springboot整合Dubbo与Feign的实现 (无注册中心)_java</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-free-ssr-node.htm" title="「1月15日」最高速度22.6M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「1月15日」最高速度22.6M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45158.htm" title="领养狗狗需要签领养协议吗（领养狗狗要求）">领养狗狗需要签领养协议吗（领养狗狗要求）</a></li>
+                        <li class="py-2"><a href="/news/article-62385.htm" title="动物诊疗许可证办理流程视频（动物诊疗许可证申请条件）">动物诊疗许可证办理流程视频（动物诊疗许可证申请条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-subscribe-node.htm" title="「2月17日」最高速度22M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「2月17日」最高速度22M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20792.htm" title="领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用">领养宠物的软件平台哪个好 领养宠物的软件平台哪个好用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-free-clash-stash.htm" title="「12月23日」最高速度20.6M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「12月23日」最高速度20.6M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31369.htm" title="python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法">python -mysql-excel数据导出-如何把python的list列表中的数据放入sql语句的in后的语句中的办法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-share-clash-stash.htm" title="「2月8日」最高速度22.7M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「2月8日」最高速度22.7M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-61198.htm" title="宠物粮公司排名榜最新名单（国内宠物粮食十大厂家）">宠物粮公司排名榜最新名单（国内宠物粮食十大厂家）</a></li>
                     </ul>
     </div>
 </div>
@@ -142,16 +138,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                     </ul>
     </div>
