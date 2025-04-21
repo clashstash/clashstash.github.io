@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashstash.github.io/news/article-101045.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpringBoot程序预装载数据</title>
+        <meta name="description" content="在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。 适用场景  预装载应用级别数据到缓存：如字典数据、" />
+        <link rel="icon" href="/assets/website/img/clashstash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashStash官方节点站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashstash.github.io/news/article-101045.htm" />
+    <meta property="og:site_name" content="ClashStash官方节点站" />
+    <meta property="og:title" content="SpringBoot程序预装载数据" />
+    <meta property="og:image" content="https://clashstash.github.io/uploads/20240709/e6c5d436361ce233a45205e562f96497.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:54:30" />
+    <meta property="og:updated_time" content="2025-04-21T06:54:30" />
+        <meta property="og:description" content="在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。 适用场景  预装载应用级别数据到缓存：如字典数据、" />
+        
+    <link rel="stylesheet" href="/assets/website/css/clashstash/maicons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashstash/theme.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot程序预装载数据">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26WJLQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGG26WJLQX');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+    <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+            <div class="container">
+                                <a href="/" class="navbar-brand">Clash<span class="text-primary">Stash</span></a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-banner">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <nav aria-label="Breadcrumb">
+                            <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                <li class="breadcrumb-item active">正文</li>
+                            </ul>
+                        </nav>
+                        <h1 class="text-center">SpringBoot程序预装载数据</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				</h1> <p>在项目实际的开发过程中，有时候会遇到需要在应用程序启动完毕对外提供服务之前预先将部分数据装载到缓存的需求。本文就总结了常见的数据预装载方式及其实践。</p> <h2 id="适用场景">适用场景</h2> <ul> <li>预装载应用级别数据到缓存：如字典数据、公共的业务数据</li> <li>系统预热</li> <li>心跳检测：如在系统启动完毕访问一个外服务接口等场景</li> </ul> <h2 id="常见方式">常见方式</h2> <ul> <li>ApplicationEvent</li> <li>CommandLineRunner</li> <li>ApplicationRunner</li> </ul> </h1> <p>应用程序事件，就是发布订阅模式。在系统启动完毕，向应用程序注册一个事件，监听者一旦监听到了事件的发布，就可以做一些业务逻辑的处理了。</p> <p>既然是发布-订阅模式，那么订阅者既可以是一个，也可以是多个。</p> <h2 id="定义event">定义event</h2> <pre><code> import org.springframework.context.ApplicationEvent; public class CacheEvent &nbsp; extends ApplicationEvent { &nbsp; &nbsp; public CacheEvent(Object source) { &nbsp; &nbsp; &nbsp; &nbsp; super(source); &nbsp; &nbsp; } }</code></pre> <h2 id="定义listener">定义listener</h2> <pre><code> import lombok.extern.slf4j.Slf4j; import org.apache.commons.lang3.StringUtils; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.ApplicationListener; import org.springframework.stereotype.Component; import org.springframework.util.CollectionUtils; import java.util.List; import java.util.Map; import java.util.stream.Collectors; @Slf4j @Component public class CacheEventListener implements ApplicationListener&lt;CacheEvent&gt; { &nbsp; &nbsp; @Autowired &nbsp; &nbsp; private MaskingService maskingService; &nbsp; &nbsp; @Autowired &nbsp; &nbsp; private RedisCache redisCache; &nbsp; &nbsp; @Override &nbsp; &nbsp; public void onApplicationEvent(CacheEvent cacheEvent) { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-start"); &nbsp; &nbsp; &nbsp; &nbsp; List&lt;SysMasking&gt; maskings = maskingService.selectAllSysMaskings(); &nbsp; &nbsp; &nbsp; &nbsp; if (!CollectionUtils.isEmpty(maskings)) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-data-not-empty"); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Map&lt;String, List&lt;SysMasking&gt;&gt; cacheMap = maskings.stream().collect(Collectors.groupingBy(SysMasking::getFieldKey)); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cacheMap.keySet().forEach(x -&gt; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (StringUtils.isNotEmpty(x)) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-x={}", x); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;SysMasking&gt; list = cacheMap.get(x); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; long count = redisCache.setCacheList(RedisKeyPrefix.MASKING.getPrefix() + x, list); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-count={}", count); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-x-is-empty"); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }); &nbsp; &nbsp; &nbsp; &nbsp; } else { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-data-is-empty"); &nbsp; &nbsp; &nbsp; &nbsp; } &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheEventListener-end"); &nbsp; &nbsp; } }</code></pre> <h2 id="注册event">注册event</h2> <pre><code> @Slf4j @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}) public class BAMSApplication { &nbsp; &nbsp; public static void main(String[] args) { &nbsp; &nbsp; &nbsp; &nbsp; ConfigurableApplicationContext context = SpringApplication.run(BAMSApplication.class, args); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("app-started"); &nbsp; &nbsp; &nbsp; &nbsp; context.publishEvent(new CacheEvent("处理缓存事件")); &nbsp; &nbsp; } }</code></pre> </h1> <p>通过实现 CommandLineRunner 接口，可以在应用程序启动完毕，回调到指定的方法中。</p> <pre><code> package com.ramble.warmupservice.runner; import lombok.extern.slf4j.Slf4j; import org.springframework.boot.CommandLineRunner; import org.springframework.stereotype.Component; @Slf4j @Component public class CacheCommandLineRunner implements CommandLineRunner { &nbsp; &nbsp; @Override &nbsp; &nbsp; public void run(String... args) throws Exception { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-start"); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-参数={}", args); &nbsp; &nbsp; &nbsp; &nbsp; // 注入业务 service ，获取需要缓存的数据 &nbsp; &nbsp; &nbsp; &nbsp; // 注入 redisTemplate ，将需要缓存的数据存放到 redis 中 &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheCommandLineRunner-end"); &nbsp; &nbsp; } }</code></pre> </h1> <p>同CommandLineRunner 类似，区别在于，对参数做了封装。</p> <pre><code> package com.ramble.warmupservice.runner; import com.alibaba.fastjson.JSON; import lombok.extern.slf4j.Slf4j; import org.springframework.boot.ApplicationArguments; import org.springframework.boot.ApplicationRunner; import org.springframework.stereotype.Component; @Slf4j @Component public class CacheApplicationRunner implements ApplicationRunner { &nbsp; &nbsp; @Override &nbsp; &nbsp; public void run(ApplicationArguments args) throws Exception { &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-start"); &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-参数={}", JSON.toJSONString(args)); &nbsp; &nbsp; &nbsp; &nbsp; // 注入业务 service ，获取需要缓存的数据 &nbsp; &nbsp; &nbsp; &nbsp; // 注入 redisTemplate ，将需要缓存的数据存放到 redis 中 &nbsp; &nbsp; &nbsp; &nbsp; log.debug("CacheApplicationRunner-end"); &nbsp; &nbsp; } }</code></pre> </h1> <p>上述代码在idea中启动，若不带参数，输出如下：</p> <pre><code> 2022-04-28 15:44:00.981 &nbsp;INFO 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.WarmupServiceApplication &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Started WarmupServiceApplication in 1.335 seconds (JVM running for 2.231) 2022-04-28 15:44:00.982 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-start 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-参数={"nonOptionArgs":[],"optionNames":[],"sourceArgs":[]} 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-end 2022-04-28 15:44:01.025 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-start 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-参数={} 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-end 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-start 2022-04-28 15:44:01.026 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-参数=ApplicationEvent--&gt;缓存系统数据 2022-04-28 15:44:01.029 DEBUG 1160 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-end Disconnected from the target VM, address: '127.0.0.1:61320', transport: 'socket' Process finished with exit code 130</code></pre> <p>若使用 java  -jar  xxx.jar    --server.port=9009 启动，则输入如下：</p> <pre><code> 2022-04-28 16:02:05.327 &nbsp;INFO 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.WarmupServiceApplication &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : Started WarmupServiceApplication in 1.78 seconds (JVM running for 2.116) 2022-04-28 16:02:05.329 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-start 2022-04-28 16:02:05.393 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-参数={"nonOptionArgs":[],"optionNames":["server.port"],"sourceArgs":["--server.port=9009"]} 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheApplicationRunner &nbsp; &nbsp; &nbsp;: CacheApplicationRunner-end 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-start 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-参数=--server.port=9009 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.runner.CacheCommandLineRunner &nbsp; &nbsp; &nbsp;: CacheCommandLineRunner-end 2022-04-28 16:02:05.395 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-start 2022-04-28 16:02:05.396 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener- 参数=ApplicationEvent--&gt;缓存系统数据 2022-04-28 16:02:05.396 DEBUG 9916 --- [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main] c.r.w.listener.CacheEventListener &nbsp; &nbsp; &nbsp; &nbsp;: CacheEventListener-end</code></pre> </h1> <p>从上面测试的输出，可以看到三种方式执行的顺序为：<br /> ApplicationRunner---&gt;CommandLineRunner---&gt;ApplicationEvent</p> <p>另外，若同时定义多个runner，可以通过order来指定他们的优先级。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/naylor_personal/ramble-spring-cloud/tree/master/warmup-service"  target="_blank" rel="nofollow">https://gitee.com/naylor_personal/ramble-spring-cloud/tree/master/warmup-service</a></p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100447.htm">宠物粮食品牌起名大全图片及名字怎么起（宠物粮品牌排行）</a></p>
+                                        <p>下一个：<a href="/news/article-101046.htm">开宠物店去哪里进货渠道（开宠物店去哪里进货渠道好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-free-clash-subscribe.htm" title="「4月8日」最高速度21.3M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「4月8日」最高速度21.3M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-82768.htm" title="开宠物店会不会赔本呢（开宠物店会不会赔本呢）">开宠物店会不会赔本呢（开宠物店会不会赔本呢）</a></li>
+                        <li class="py-2"><a href="/news/article-89958.htm" title="动物疫苗接种方法有几种图片 动物疫苗接种方法有几种图片大全">动物疫苗接种方法有几种图片 动物疫苗接种方法有几种图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-79945.htm" title="猫粮品牌排行榜10强有哪些（猫粮排行榜前十）">猫粮品牌排行榜10强有哪些（猫粮排行榜前十）</a></li>
+                        <li class="py-2"><a href="/news/article-97372.htm" title="Android jetpack room+ViewModel+liveData 数据自动更新">Android jetpack room+ViewModel+liveData 数据自动更新</a></li>
+                        <li class="py-2"><a href="/news/article-87048.htm" title="动物医院好评语怎么写啊（动物医院好评语怎么写啊英文）">动物医院好评语怎么写啊（动物医院好评语怎么写啊英文）</a></li>
+                        <li class="py-2"><a href="/news/article-68541.htm" title="python2 连接hdfs 解决kerberos认证">python2 连接hdfs 解决kerberos认证</a></li>
+                        <li class="py-2"><a href="/news/article-82026.htm" title="小猫为什么不能打（小猫为什么不能打屁呢）">小猫为什么不能打（小猫为什么不能打屁呢）</a></li>
+                        <li class="py-2"><a href="/news/article-76541.htm" title="动物医院实践心得5000字怎么写的呀 动物医院实践心得5000字怎么写的呀作文">动物医院实践心得5000字怎么写的呀 动物医院实践心得5000字怎么写的呀作文</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-clash-stash.htm" title="「3月26日」最高速度18M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「3月26日」最高速度18M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+        <footer class="page-footer bg-image" style="background-image: url(/assets/website/img/clashstash/world_pattern.svg);">
+        <div class="container">
+            <p class="text-center" id="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <a href="/">ClashStash官方节点站</a> 版权所有
+                <br />Powered by WordPress
+            </p>
+        </div>
+    </footer>
+    <script src="/assets/website/js/frontend/clashstash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashstash/bootstrap.bundle.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

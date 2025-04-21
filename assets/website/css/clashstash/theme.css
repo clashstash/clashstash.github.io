@@ -2051,3 +2051,5 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 40px 0 0 40px;
 }
 #about .item h3.title-section {font-size: 1.5rem;}
+
+.xcblog-blog-list .item {margin-bottom: 1.5rem;}
