@@ -1,4 +1,4 @@
-# 「11月10日」最高速度21.4M/S，2025年Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点每天更新免费节点订阅链接  更新时间 2025-11-10 09:13:37
+# 「11月18日」最高速度21.5M/S，2025年Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点每天更新免费节点订阅链接  更新时间 2025-11-18 09:01:55
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashstash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashstash.github.io/uploads/2025/11/0-20251110.yaml
-- https://clashstash.github.io/uploads/2025/11/1-20251110.yaml
-- https://clashstash.github.io/uploads/2025/11/2-20251110.yaml
-- https://clashstash.github.io/uploads/2025/11/3-20251110.yaml
-- https://clashstash.github.io/uploads/2025/11/4-20251110.yaml
+- https://clashstash.github.io/uploads/2025/11/0-20251118.yaml
+- https://clashstash.github.io/uploads/2025/11/1-20251118.yaml
+- https://clashstash.github.io/uploads/2025/11/2-20251118.yaml
+- https://clashstash.github.io/uploads/2025/11/3-20251118.yaml
+- https://clashstash.github.io/uploads/2025/11/4-20251118.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashstash.github.io/uploads/2025/11/0-20251110.txt
-- https://clashstash.github.io/uploads/2025/11/1-20251110.txt
-- https://clashstash.github.io/uploads/2025/11/2-20251110.txt
-- https://clashstash.github.io/uploads/2025/11/3-20251110.txt
-- https://clashstash.github.io/uploads/2025/11/4-20251110.txt
+- https://clashstash.github.io/uploads/2025/11/0-20251118.txt
+- https://clashstash.github.io/uploads/2025/11/1-20251118.txt
+- https://clashstash.github.io/uploads/2025/11/2-20251118.txt
+- https://clashstash.github.io/uploads/2025/11/3-20251118.txt
+- https://clashstash.github.io/uploads/2025/11/4-20251118.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashstash.github.io/uploads/2025/11/20251110.json
+- https://clashstash.github.io/uploads/2025/11/20251118.json
 
 ## 更多Clash节点订阅 ：
 
