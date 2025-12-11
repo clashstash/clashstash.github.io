@@ -146,16 +146,6 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Sing-box 可根据策略组和规则文件，将不同应用的流量分配到最佳节点。视频和游戏流量可选择低延迟、高带宽节点，保证流畅播放和操作响应，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何提高 Vmess 协议的安全性？</h5></div>
-    <div class="panel-body">
-        可通过启用 TLS 加密、使用安全端口（如 443）、结合 WebSocket 或 gRPC 传输方式来提升安全性。同时，避免公开分享 UUID，定期更换节点参数能进一步减少被封风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
     <div class="panel-body">
         Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
@@ -166,14 +156,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Shadowrocket 可结合延迟测速和策略组自动选择低延迟、稳定节点处理不同流量。提高网页、视频和游戏访问速度，减少掉线和卡顿，优化整体上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的 obfs 混淆原理是什么？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
     <div class="panel-body">
-        SSR 的 obfs 模块通过模拟常见流量特征（如 HTTPS 或 HTTP 请求头）来掩盖加密流量。这样可让代理流量看起来像正常的网页访问，从而有效降低被检测和封锁的风险。<hr />    </div>
+        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 协议如何配置优化抗封锁？</h5></div>
+    <div class="panel-heading"><h5>如何提高 Vmess 协议的安全性？</h5></div>
     <div class="panel-body">
-        SSR 可通过选择合适协议、混淆方式和端口来降低被检测风险。合理配置可增强节点隐蔽性，提高长期稳定性，确保科学上网体验顺畅且可靠。<hr />    </div>
+        可通过启用 TLS 加密、使用安全端口（如 443）、结合 WebSocket 或 gRPC 传输方式来提升安全性。同时，避免公开分享 UUID，定期更换节点参数能进一步减少被封风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayN 与 WinXray 哪个更易用？</h5></div>
@@ -181,14 +176,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         V2RayN 界面更简洁，功能更稳定，而 WinXray 提供了更现代的界面和自动测速功能。对于初学者来说，V2RayN 上手更快；而追求高级功能的用户可能更喜欢 WinXray。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
+    <div class="panel-heading"><h5>SSR 协议如何配置优化抗封锁？</h5></div>
     <div class="panel-body">
-        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
+        SSR 可通过选择合适协议、混淆方式和端口来降低被检测风险。合理配置可增强节点隐蔽性，提高长期稳定性，确保科学上网体验顺畅且可靠。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
     <div class="panel-body">
-        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。    </div>
+        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的 obfs 混淆原理是什么？</h5></div>
+    <div class="panel-body">
+        SSR 的 obfs 模块通过模拟常见流量特征（如 HTTPS 或 HTTP 请求头）来掩盖加密流量。这样可让代理流量看起来像正常的网页访问，从而有效降低被检测和封锁的风险。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -217,16 +217,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-18-free-subscribe-node.htm" title="「11月18日」最高速度21.5M/S，2025年Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点每天更新免费节点订阅链接">「11月18日」最高速度21.5M/S，2025年Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-free-clash-subscribe.htm" title="「10月23日」最高速度18.1M/S，2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点每天更新免费节点订阅链接">「10月23日」最高速度18.1M/S，2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-5-free-clash-subscribe.htm" title="「10月5日」最高速度21.8M/S，2025年Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点每天更新免费节点订阅链接">「10月5日」最高速度21.8M/S，2025年Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-21-free-node-subscribe.htm" title="「10月21日」最高速度21.8M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点每天更新免费节点订阅链接">「10月21日」最高速度21.8M/S，2025年V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-clash-windows.htm" title="「10月31日」最高速度18.8M/S，2025年SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接">「10月31日」最高速度18.8M/S，2025年SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-clash-node.htm" title="「11月15日」最高速度22.1M/S，2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接">「11月15日」最高速度22.1M/S，2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-share-clash-stash.htm" title="「11月4日」最高速度21.7M/S，2025年V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点每天更新免费节点订阅链接">「11月4日」最高速度21.7M/S，2025年V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-free-ssr-node.htm" title="「11月2日」最高速度21.6M/S，2025年SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点每天更新免费节点订阅链接">「11月2日」最高速度21.6M/S，2025年SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-9-clash-windows.htm" title="「10月9日」最高速度18.7M/S，2025年Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点每天更新免费节点订阅链接">「10月9日」最高速度18.7M/S，2025年Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-20-node-share.htm" title="「10月20日」最高速度19.1M/S，2025年V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接">「10月20日」最高速度19.1M/S，2025年V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-free-node-subscribe.htm" title="「11月27日」最高速度22.8M/S，2025年Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接">「11月27日」最高速度22.8M/S，2025年Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-node-share-links.htm" title="「11月22日」最高速度18.7M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接">「11月22日」最高速度18.7M/S，2025年Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-node-share-links.htm" title="「11月5日」最高速度21.6M/S，2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接">「11月5日」最高速度21.6M/S，2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-21-free-node-subscribe-links.htm" title="「11月21日」最高速度18.3M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接">「11月21日」最高速度18.3M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-clash-stash.htm" title="「11月9日」最高速度21.9M/S，2025年Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点每天更新免费节点订阅链接">「11月9日」最高速度21.9M/S，2025年Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-clash-windows.htm" title="「11月10日」最高速度20.3M/S，2025年V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点每天更新免费节点订阅链接">「11月10日」最高速度20.3M/S，2025年V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-13-node-share.htm" title="「11月13日」最高速度18M/S，2025年Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点每天更新免费节点订阅链接">「11月13日」最高速度18M/S，2025年Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-clash-stash-node.htm" title="「11月14日」最高速度21.2M/S，2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点每天更新免费节点订阅链接">「11月14日」最高速度21.2M/S，2025年Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-free-subscribe-node.htm" title="「11月19日」最高速度19.3M/S，2025年V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接">「11月19日」最高速度19.3M/S，2025年V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-free-stash-node.htm" title="「12月4日」最高速度21.7M/S，2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点每天更新免费节点订阅链接">「12月4日」最高速度21.7M/S，2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -238,10 +238,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
