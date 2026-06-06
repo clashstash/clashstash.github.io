@@ -1,4 +1,4 @@
-# 「6月2日」最高速度19.7M/S，2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点每天更新免费节点订阅链接  更新时间 2026-06-02 09:41:06
+# 「6月6日」最高速度19M/S，2025年V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点每天更新免费节点订阅链接  更新时间 2026-06-06 09:13:24
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashstash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashstash.github.io/uploads/2026/06/0-20260602.yaml
-- https://clashstash.github.io/uploads/2026/06/1-20260602.yaml
-- https://clashstash.github.io/uploads/2026/06/2-20260602.yaml
-- https://clashstash.github.io/uploads/2026/06/3-20260602.yaml
-- https://clashstash.github.io/uploads/2026/06/4-20260602.yaml
+- https://clashstash.github.io/uploads/2026/06/0-20260606.yaml
+- https://clashstash.github.io/uploads/2026/06/1-20260606.yaml
+- https://clashstash.github.io/uploads/2026/06/2-20260606.yaml
+- https://clashstash.github.io/uploads/2026/06/3-20260606.yaml
+- https://clashstash.github.io/uploads/2026/06/4-20260606.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashstash.github.io/uploads/2026/06/0-20260602.txt
-- https://clashstash.github.io/uploads/2026/06/1-20260602.txt
-- https://clashstash.github.io/uploads/2026/06/2-20260602.txt
-- https://clashstash.github.io/uploads/2026/06/3-20260602.txt
-- https://clashstash.github.io/uploads/2026/06/4-20260602.txt
+- https://clashstash.github.io/uploads/2026/06/0-20260606.txt
+- https://clashstash.github.io/uploads/2026/06/1-20260606.txt
+- https://clashstash.github.io/uploads/2026/06/2-20260606.txt
+- https://clashstash.github.io/uploads/2026/06/3-20260606.txt
+- https://clashstash.github.io/uploads/2026/06/4-20260606.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashstash.github.io/uploads/2026/06/20260602.json
+- https://clashstash.github.io/uploads/2026/06/20260606.json
 
 ## 更多Clash节点订阅 ：
 
