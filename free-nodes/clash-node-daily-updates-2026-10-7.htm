@@ -339,14 +339,9 @@ sudo systemctl </span><span><span class="hljs-built_in">enable</span></span><spa
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 使用 WebSocket + TLS 有哪些优势？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
     <div class="panel-body">
-        WebSocket + TLS 可将 V2Ray 流量伪装成 HTTPS 请求，隐藏真实通信特征。结合域名伪装和策略组使用，可以有效绕过封锁，提高节点安全性和连接稳定性，保持长期稳定访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 是否兼容 Clash 配置文件？</h5></div>
-    <div class="panel-body">
-        部分兼容。Sing-box 支持从 Clash 订阅转换工具导入节点，但配置语法略有不同。建议使用第三方订阅转换器，如 sub-converter，将 Clash 格式转换为 Sing-box JSON 格式使用。<hr />    </div>
+        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
@@ -354,29 +349,9 @@ sudo systemctl </span><span><span class="hljs-built_in">enable</span></span><spa
         重写（Rewrite）可用于修改请求头、屏蔽广告、替换响应内容等。通过正则匹配目标请求可实现页面定制与功能增强，但应谨慎使用以避免影响正常网站加载与安全验证。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 是否兼容 Clash 配置文件？</h5></div>
     <div class="panel-body">
-        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
-    <div class="panel-body">
-        WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 支持 Reality 吗？</h5></div>
-    <div class="panel-body">
-        支持。Hiddify Next 基于 sing-box 内核，可加载 Vless+Reality、Trojan+TLS 等高级协议配置。用户可直接导入机场订阅，无需手动修改复杂参数。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
-    <div class="panel-body">
-        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 可以用脚本自动切换节点吗？</h5></div>
-    <div class="panel-body">
-        可以。Quantumult X 支持通过脚本逻辑判断网络延迟或连接失败情况，并自动切换节点。用户可以编写自定义 JS 规则，从而实现智能代理与按需分流，适合高级用户使用。<hr />    </div>
+        部分兼容。Sing-box 支持从 Clash 订阅转换工具导入节点，但配置语法略有不同。建议使用第三方订阅转换器，如 sub-converter，将 Clash 格式转换为 Sing-box JSON 格式使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
@@ -384,9 +359,34 @@ sudo systemctl </span><span><span class="hljs-built_in">enable</span></span><spa
         Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 可以用脚本自动切换节点吗？</h5></div>
+    <div class="panel-body">
+        可以。Quantumult X 支持通过脚本逻辑判断网络延迟或连接失败情况，并自动切换节点。用户可以编写自定义 JS 规则，从而实现智能代理与按需分流，适合高级用户使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的策略组如何提升分流效率？</h5></div>
     <div class="panel-body">
-        策略组可以将多个节点或规则组合在一起，实现按条件自动选择最佳节点。通过策略组，用户无需手动切换节点即可根据延迟、地理位置或流量类型自动分流，提高网络效率。    </div>
+        策略组可以将多个节点或规则组合在一起，实现按条件自动选择最佳节点。通过策略组，用户无需手动切换节点即可根据延迟、地理位置或流量类型自动分流，提高网络效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
+    <div class="panel-body">
+        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 使用 WebSocket + TLS 有哪些优势？</h5></div>
+    <div class="panel-body">
+        WebSocket + TLS 可将 V2Ray 流量伪装成 HTTPS 请求，隐藏真实通信特征。结合域名伪装和策略组使用，可以有效绕过封锁，提高节点安全性和连接稳定性，保持长期稳定访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 支持 Reality 吗？</h5></div>
+    <div class="panel-body">
+        支持。Hiddify Next 基于 sing-box 内核，可加载 Vless+Reality、Trojan+TLS 等高级协议配置。用户可直接导入机场订阅，无需手动修改复杂参数。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -434,16 +434,16 @@ sudo systemctl </span><span><span class="hljs-built_in">enable</span></span><spa
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-10-8-free-ssr-node.htm" title="「10月8日」最高速度18.9M/S，2025年Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点/V2ray节点每天更新免费节点订阅链接">「10月8日」最高速度18.9M/S，2025年Shadowrocket节点/Singbox节点/Trojan节点/SSR节点/Clash节点/V2ray节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-18-clash-windows.htm" title="「9月18日」最高速度18.7M/S，2025年SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点每天更新免费节点订阅链接">「9月18日」最高速度18.7M/S，2025年SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-19.htm" title="「9月19日」最高速度20.6M/S，2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点每天更新免费节点订阅链接">「9月19日」最高速度20.6M/S，2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-node-share.htm" title="「9月28日」最高速度22.5M/S，2025年SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接">「9月28日」最高速度22.5M/S，2025年SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-shadowrocket-node-2026-9-23.htm" title="「9月23日」最高速度19.6M/S，2025年Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点每天更新免费节点订阅链接">「9月23日」最高速度19.6M/S，2025年Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-5.htm" title="「9月5日」最高速度19.9M/S，2025年Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点每天更新免费节点订阅链接">「9月5日」最高速度19.9M/S，2025年Shadowrocket节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/SSR节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-3.htm" title="「9月3日」最高速度18.4M/S，2025年Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点每天更新免费节点订阅链接">「9月3日」最高速度18.4M/S，2025年Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点每天更新免费节点订阅链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-10-free-node-subscribe.htm" title="「9月10日」最高速度19.8M/S，2025年V2ray节点/SSR节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接">「9月10日」最高速度19.8M/S，2025年V2ray节点/SSR节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-clash-subscribe.htm" title="「9月16日」最高速度19.8M/S，2025年SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接">「9月16日」最高速度19.8M/S，2025年SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/linux-clash-stash-2026-9-13.htm" title="「9月13日」最高速度22.8M/S，2025年V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/Clash节点每天更新免费节点订阅链接">「9月13日」最高速度22.8M/S，2025年V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-stash-node-2026-9-7.htm" title="「9月7日」最高速度21.3M/S，2025年Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接">「9月7日」最高速度21.3M/S，2025年Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-5.htm" title="「10月5日」最高速度19.4M/S，2025年V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点每天更新免费节点订阅链接">「10月5日」最高速度19.4M/S，2025年V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-node-daily-updates-2026-10-7.htm" title="「10月7日」最高速度20.8M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点每天更新免费节点订阅链接">「10月7日」最高速度20.8M/S，2025年Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/linux-clash-stash-2026-9-27.htm" title="「9月27日」最高速度20.1M/S，2025年Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点每天更新免费节点订阅链接">「9月27日」最高速度20.1M/S，2025年Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/SSR节点每天更新免费节点订阅链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-17.htm" title="「9月17日」最高速度20.4M/S，2025年V2ray节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接">「9月17日」最高速度20.4M/S，2025年V2ray节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-24-clash-node.htm" title="「9月24日」最高速度21.8M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点每天更新免费节点订阅链接">「9月24日」最高速度21.8M/S，2025年Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-14-free-ssr-node.htm" title="「9月14日」最高速度18.7M/S，2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点每天更新免费节点订阅链接">「9月14日」最高速度18.7M/S，2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-node-share.htm" title="「10月4日」最高速度20.5M/S，2025年SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点每天更新免费节点订阅链接">「10月4日」最高速度20.5M/S，2025年SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点每天更新免费节点订阅链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/linux-clash-stash-2026-9-29.htm" title="「9月29日」最高速度22.5M/S，2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费节点订阅链接">「9月29日」最高速度22.5M/S，2025年Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点每天更新免费节点订阅链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -455,7 +455,7 @@ sudo systemctl </span><span><span class="hljs-built_in">enable</span></span><spa
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
